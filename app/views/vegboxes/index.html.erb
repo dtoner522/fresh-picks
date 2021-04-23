@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Teddies</h1>
+  <div class="row">
+    <% @vegboxes.each do |box| %>
+      <div class="col-6 col-md-4">
+        <div class="card">
+          <%# <%= image_tag teddy.photo_url , class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= box.name %></h5>
+            <p class="card-text"><%= box.name %></p>
+            <p><%= humanized_money_with_symbol(box.price) %></p>
+            <%= link_to "More details", vegbox_path(box), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
