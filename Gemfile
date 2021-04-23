@@ -33,6 +33,12 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'pundit'
+
+#payment
+gem 'money-rails'
+gem 'stripe'
+
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
