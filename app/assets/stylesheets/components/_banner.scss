@@ -1,0 +1,23 @@
+.banner {
+  // background-image: url("app/assets/images/veg_home_hero.jpg");
+  background-color: lightgreen;
+  background-size: cover; 
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 4%;
+  padding-top: 4%;
+  position: relative;
+
+  h1 {
+    font-size: 75px;
+    color: white;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 40px;
+    color: white;
+    font-weight: 400;
+  }
+}
