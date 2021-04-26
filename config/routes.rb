@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :vegboxes, only: [:index, :show]
 
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
   resources :orders, only: [:show, :create]  do
     resources :payments, only: :new
   end
