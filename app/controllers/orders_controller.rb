@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
 
   def show
-    @order = current_user.orders.find(params[:id])
+    @order = current_or_guest_user.orders.find(params[:id])
   end
   
   def create
     vegbox = Vegbox.find(params[:vegbox_id])
-    order  = Order.create!(vegbox: vegbox, name: vegbox.name, amount: vegbox.price, state: 'pending', user: current_user)
+    order  = Order.create!(vegbox: vegbox, name: vegbox.name, amount: vegbox.price, state: 'pending', user: current_or_guest_user)
     
     session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
