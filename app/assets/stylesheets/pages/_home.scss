@@ -17,18 +17,19 @@
 
   .product-content {
     padding-top: 3%;
-    padding-left: 0%;
+    padding-left: 2%;
+    padding-right: 2%;
   }
 
   button {
-    width: 80vw;
+    width: 90vw;
   }
 }
 
 // Mobile
 @media(max-width: 500px){
   .content {
-    padding: 1%;
+    padding: 2%;
   }
   
   .banner h1 {
@@ -42,5 +43,14 @@
     color: white;
     font-weight: 400;
     padding-bottom: 3%;
+  }
+
+  .card img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .blog-content h2 {
+    padding-top: 3%;
   }
 }
