@@ -1,6 +1,6 @@
 .banner {
   // background-image: url("app/assets/images/veg_home_hero.jpg");
-  background-color: lightgreen;
+  background-color: $brown;
   background-size: cover; 
   height: 100vh;
   display: flex;
@@ -11,13 +11,13 @@
 
   h1 {
     font-size: 75px;
-    color: white;
+    color: $cream;
     font-weight: 700;
   }
 
   h2 {
     font-size: 40px;
-    color: white;
+    color: $cream;
     font-weight: 400;
   }
 }
