@@ -7,5 +7,7 @@ class VegboxesController < ApplicationController
 
   def show
     @vegbox = Vegbox.find(params[:id])
+    @order = Order.new
+    @user = current_or_guest_user
   end
 end

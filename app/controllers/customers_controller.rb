@@ -15,7 +15,7 @@ class CustomersController < ApplicationController
     end
 
     def customer_params
-      params.require(:customer).permit(:first_name, :last_name, :email, :phone_number, :address_line_1, :address_line_2, :postcode, :order_id)
+      params.require(:customer).permit(:user, :vegbox, :first_name, :last_name, :email, :phone_number, :address_line_1, :address_line_2, :postcode, :order_id)
     end
 
 end
