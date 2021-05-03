@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   def new
-    @order = current_or_guest_user.orders.where(state: 'pending').find(params[:order_id])
+    @order = Order.find_by_id(params[:order_id]) #syntax is wrong can't figure out
     @customer = Customer.new
   end
 end
