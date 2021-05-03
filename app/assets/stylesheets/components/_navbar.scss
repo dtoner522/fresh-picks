@@ -1,6 +1,6 @@
 .navbar-mt {
   justify-content: space-between;
-  background: white;
+  background: $cream;
   .navbar-brand, .dropdown-item {
     color: $mango-black;
   }
@@ -11,8 +11,13 @@
 }
 
 .navbar-mt .navbar-brand img {
-  width: 40px;
+  width: 70px;
 }
+
 .nav-link {
   display: inline;
+}
+
+a.nav-link {
+  font-size: 24px;
 }
