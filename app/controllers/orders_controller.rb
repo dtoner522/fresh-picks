@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
         line_items: [{
         name: vegbox.name,
         amount: vegbox.price_cents,
-        currency: 'eur',
+        currency: 'gbp',
         quantity: 1
         }],
         success_url: order_url(order),
