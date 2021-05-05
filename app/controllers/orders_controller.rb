@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
 
   def show
-    @order = current_user.orders.find(params[:id])
+    @order = Order.find(params[:id]) #current_or_guest_user.orders.find(params[:id])
   end
   
   def create
-    vegbox = Vegbox.find(params[:vegbox_id])
-    order  = Order.create!(vegbox: vegbox, name: vegbox.name, amount: vegbox.price, state: 'pending', user: current_user)
+    vegbox = Vegbox.find_by(params[:vegbox_id])
+    order  = Order.create!(order_params) #vegbox: vegbox, name: vegbox.name, amount: vegbox.price, state: 'pending', user: current_or_guest_user)
     
     session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
@@ -22,5 +22,9 @@ class OrdersController < ApplicationController
     
     order.update(checkout_session_id: session.id)
     redirect_to new_order_payment_path(order)
+  end
+
+  def order_params
+    params.require(:order).permit( :name, :amount, :state, :first_name, :last_name, :email, :phone_number, :address_line_1, :address_line_2, :postcode, :order_id)
   end
 end

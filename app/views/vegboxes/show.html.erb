@@ -10,9 +10,22 @@
       <p>$$$</p>
     </div>
 
-    <%= form_tag orders_path do %>
-    <%= hidden_field_tag 'vegbox_id', @vegbox.id %>
-    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+        <%# need to fix params here %>
+
+    <%= simple_form_for @order do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :email %>
+      <%= f.input :phone_number %>
+      <%= f.input :address_line_1 %>
+      <%= f.input :address_line_2 %>
+      <%= f.input :postcode %>
+      <%= f.hidden_field :amount, value: @vegbox.price %>
+      <%= f.hidden_field :name, value: @vegbox.name %>
+      <%= f.hidden_field :state, value: "pending" %>
+
+      <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
     <% end %>
+
   </div>
 </div>

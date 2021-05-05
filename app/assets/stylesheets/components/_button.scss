@@ -1,0 +1,16 @@
+.banner_button {
+  font-size: 24px;
+  font-family: 'Noto Serif JP';
+  margin-top: 3%;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: $brown;
+  background-color: $cream;
+  border-color: $cream;
+
+  &:hover {
+    color: $cream;
+    background-color: rgba(37, 11, 6, 0.3);
+    border-color: $cream;
+  }
+}

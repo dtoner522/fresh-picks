@@ -34,6 +34,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'pundit'
 
+gem 'devise-guests'
+
 #payment
 gem 'money-rails'
 gem 'stripe'
