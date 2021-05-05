@@ -1,15 +1,29 @@
 <div class="container">
-  <h1>Teddies</h1>
+  <h1 class="">Vegbox</h1>
   <div class="row">
     <% @vegboxes.each do |box| %>
-      <div class="col-6 col-md-4">
+    <div class="col-6 justify-content-center">
+      <img src="https://res.cloudinary.com/dtoner522/image/upload/v1620220338/IMG_20200319_140357574-re-e1584663160830_pkop0u.jpg" alt="" class="w-100 pt-3">
+      <%= link_to "Order now!", vegbox_path(box), class: "btn btn-primary d-block w-100" %>
+    </div>
+      <div class="col-6">
         <div class="card">
           <%# <%= image_tag teddy.photo_url , class: "card-img-top" %>
           <div class="card-body">
-            <h5 class="card-title"><%= box.name %></h5>
+            <h5 class="card-title">Weekly Vegbox</h5>
             <p class="card-text"><%= box.name %></p>
             <p><%= humanized_money_with_symbol(box.price) %></p>
-            <%= link_to "More details", vegbox_path(box), class: "btn btn-primary" %>
+            <h5>What is in a box?</h5>
+            <p>Given our very small scale, we can’t itemise every box, therefore we decide what will go in to each box. Within the veg box we plan to;</p>
+            <ul>
+              <li>– have 8-12 items per week</li>
+              <br><li>– lettuce/salad in almost every share</li>
+              <br><li>– herbs in every share</li>
+              <br><li>Frequent veg to include; carrots, beetroot, salad, spinach, tomatoes, cucumbers, rainbow chard, radishes, peas, beans, baby turnips, kale, Asian greens, courgettes, spring onions, leeks, herbs (mint/ parsley/ basil/ dill/ coriander)</li>
+              <br><li>Occasional veg; fennel, kohl rabi, garlic, peppers, celery, potatoes</li>
+              <br><li>Please note; as we grow on a very small scale, potatoes and cooking onions will not be staples in the boxes, although they will be in the boxes a few times. We know you love potatoes and think you should definitely go buy delicious locally grown potatoes from other fantastic growers.</li>
+              <br><li>Your box will follow the season and be harvested and delivered on the same day.</li>
+            </ul>
           </div>
         </div>
       </div>
