@@ -8,6 +8,7 @@
 puts 'Cleaning database...'
 Vegbox.destroy_all
 User.destroy_all
+Order.destroy_all
 
 puts 'Creating Vegboxes...'
 Vegbox.create!(name:'Up-front payment - 20 Weeks', price: 240)
