@@ -1,16 +1,12 @@
 <div class="container py-3">
   <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <%# <%= image_tag(@teddy.photo_url, width: '100%') %>
+    <div class="col-md-6">
+      <img src="https://res.cloudinary.com/dtoner522/image/upload/v1620220338/IMG_20200319_140357574-re-e1584663160830_pkop0u.jpg" alt="" class="w-100">
     </div>
-    <div class="col-sm-12 col-md-6">
-      <h1><%= @vegbox.name %></h1>
-      <p><%= humanized_money_with_symbol(@vegbox.price) %></p>
-      <p>Some awesome description of our amazing teddy.</p>
-      <p>$$$</p>
-    </div>
+    <div class="col-md-6">
+      <h1><%= @vegbox.name %> -£240</h1>
 
-        <%# need to fix params here %>
+              <%# need to fix params here - regex etc %>
 
     <%= simple_form_for @order do |f| %>
       <%= f.input :first_name %>
@@ -26,6 +22,9 @@
 
       <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
     <% end %>
+    </div>
+
+
 
   </div>
 </div>
