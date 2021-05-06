@@ -16,6 +16,16 @@
   //background-size: cover;
 }
 
+.img-logo {
+  height: 40px;
+  width: 40px;
+}
+
+.nav-link {
+  display: inline;
+  text-align: center;
+}
+
 
 
 // Tablets and under
@@ -86,4 +96,8 @@
   .footer-links {
     display: block;
   }
+}
+
+.body {
+  background-color: white;
 }
