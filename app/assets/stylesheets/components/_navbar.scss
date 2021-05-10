@@ -2,7 +2,7 @@
   justify-content: space-between;
   background-color: $cream;
   .navbar-brand, .dropdown-item {
-    color: $mango-black;
+    color: $brown;
   }
 }
 
@@ -17,8 +17,14 @@
 .nav-link {
   display: inline;
   text-align: center;
+  color: $brown;
 }
 
 a.nav-link {
   font-size: 24px;
+  color: $brown;
+  
+  &:hover {
+    font-weight: 700;
+  }
 }
