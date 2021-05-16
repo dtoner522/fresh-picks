@@ -1,18 +1,21 @@
 .product {
   display: flex;
-  padding-top: 6%;
   animation: slideInFromLeft 1s ease-in;
+  background-color: $cream;
+  color: $brown;
+  margin-top: 80px;
 }
 
 img {
   width: 30vw;
+  padding: 20px;
 }
 
 .product-content{
-  padding-left: 6%;
+  padding: 20px;
 
   p {
-    margin-top: 15px;
+    padding-top: 20px;
   }
 }
 

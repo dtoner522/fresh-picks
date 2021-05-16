@@ -1,20 +1,24 @@
 .cards {
   display: flex;
-  flex-direction: row;
+  // flex-direction: row;
+  padding-top: 80px;
+  // align-content: space-evenly;
+  justify-content: space-between;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  background-color: rgba($color: #ffffff, $alpha: 0.0);
+  background-color: $cream;
   border: none;
   align-items: center;
-  // padding-top: 6%;
-  align-content: space-evenly;
+  width: 30%;
+  color: $brown;
 
   img {
-    width: 200px;
+    width: 100%;
     height:200px;
+    padding: 20px;
   }
 
   h3 {
@@ -22,6 +26,6 @@
   }
 
   p {
-    margin-top: 15px;
+    padding: 20px;
   }
 }
