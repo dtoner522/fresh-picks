@@ -3,24 +3,34 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 100px;
   padding: 0px 50px;
   color: $cream;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
+
+  a {
+    color: $cream;
+    opacity: 0.65;
+    text-decoration: none;
+    font-size: 32px;
+    padding: 0px 10px;
+  }
+  a:hover {
+    opacity: 1;
+  }
 }
-.footer-links a {
+
+.footer-copyright a {
   color: $cream;
   opacity: 0.65;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
-.footer-links a:hover {
+.footer-copyright a:hover {
   opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
 }

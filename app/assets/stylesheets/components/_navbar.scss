@@ -1,8 +1,9 @@
 .navbar-mt {
   justify-content: space-between;
-  background-color: $cream;
+  background-color: $brown;
   .navbar-brand, .dropdown-item {
-    color: $brown;
+    color: $cream;
+    padding: 0px;
   }
 }
 
@@ -11,18 +12,19 @@
 }
 
 .navbar-mt .navbar-brand img {
-  width: 70px;
+  width: 160px;
+  padding: 0px;
 }
 
 .nav-link {
   display: inline;
   text-align: center;
-  color: $brown;
+  color: $cream;
 }
 
 a.nav-link {
   font-size: 24px;
-  color: $brown;
+  color: $cream;
   
   &:hover {
     font-weight: 700;
