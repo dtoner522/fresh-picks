@@ -1,12 +1,10 @@
-.cards {
+.cards-benefit {
   display: flex;
-  // flex-direction: row;
   padding-top: 80px;
-  // align-content: space-evenly;
   justify-content: space-between;
 }
 
-.card {
+.card-benefit {
   display: flex;
   flex-direction: column;
   background-color: $cream;

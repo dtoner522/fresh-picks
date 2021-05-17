@@ -1,14 +1,15 @@
 .product {
   display: flex;
+  justify-content: space-evenly;
   animation: slideInFromLeft 1s ease-in;
   background-color: $cream;
   color: $brown;
   margin-top: 80px;
-}
 
-img {
-  width: 30vw;
-  padding: 20px;
+  img {
+    width: 30vw;
+    padding: 20px;
+  }
 }
 
 .product-content{
