@@ -3,6 +3,7 @@ class VegboxesController < ApplicationController
 
   def index
     @vegboxes = Vegbox.all
+    @extravegs = Extraveg.all
   end
 
   def show

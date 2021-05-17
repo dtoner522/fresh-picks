@@ -1,0 +1,2 @@
+class Extraveg < ApplicationRecord
+end
