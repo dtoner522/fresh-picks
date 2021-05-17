@@ -9,5 +9,7 @@ class VegboxesController < ApplicationController
     @vegbox = Vegbox.find(params[:id])
     @order = Order.new
     @user = current_or_guest_user
+    @orders = Order.all
+    @waitlist = Waitlist.new
   end
 end

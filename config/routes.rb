@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resources :vegboxes, only: [:index, :show]
 
-  resources :customers
+  resources :waitlists, only: [:create]
+
+  get 'confirmation', to: 'pages#confirmation'
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 
