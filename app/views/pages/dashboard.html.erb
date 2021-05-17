@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Orders</h1>
+    <% @orders.each do |order| %>
+      <div class="order-card">
+        <p id="title">#<%= order.id %> / <%= order.name%> / €<%= order.amount_cents / 100%></p>
+
+        <p><strong>Customer: <%= order.first_name %> <%= order.last_name %></strong></p>
+        <p><strong>Status:</strong> <%= order.state %> | <strong>Purchased at:</strong> <%= order.created_at.strftime("%d %B %Y, %H:%M") %></p>
+        <p><strong>Email:</strong> <a href="<%= order.email %>"><%= order.email %></a> | <strong>Phone:</strong> <%= order.phone_number %></p>
+        <p><strong>Adress:</strong> <%= order.address_line_1 %>. <%= order.address_line_2 %>, <%= order.postcode %></p>
+      </div>
+
+    <% end %>
+  <h2 class="mt-4">Waiting list</h2>
+    <p>Name | email</p>
+    <p>Name | email</p>
+    <p>Name | email</p>
+</div>
