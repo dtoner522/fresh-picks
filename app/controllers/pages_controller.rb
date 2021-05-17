@@ -3,5 +3,9 @@ class PagesController < ApplicationController
 
   def home; end
 
+  def dashboard
+    @orders = Order.all
+  end
+
   def kitchensink; end
 end
