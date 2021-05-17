@@ -1,0 +1,2 @@
+class ExtravegsController < ApplicationController
+end

@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [ :home, :kitchensink ]
 
-  def home; end
+  def home
+    @extravegs = Extraveg.all
+  end
 
   def dashboard
     @orders = Order.all

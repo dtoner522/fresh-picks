@@ -6,6 +6,6 @@ class Order < ApplicationRecord
 
   def self.full?
     @orders = Order.all
-    @orders.select { |order| order.state == "paid"}.count == 0
+    @orders.select { |order| order.state == "paid"}.count == 10
   end
 end
