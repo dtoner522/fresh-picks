@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @orders = Order.all
+    @waitlists = Waitlist.all
   end
 
   def kitchensink; end
