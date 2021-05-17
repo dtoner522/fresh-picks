@@ -1,25 +1,27 @@
-.banner_button {
-  font-size: 24px;
-  font-family: 'Noto Serif JP';
-  margin-top: 3%;
-  padding-left: 15px;
-  padding-right: 15px;
-  color: $brown;
-  background-color: $cream;
-  border-color: $cream;
+// .banner_button {
+//   font-size: 24px;
+//   font-family: 'Noto Serif JP';
+//   margin-top: 3%;
+//   padding-left: 15px;
+//   padding-right: 15px;
+//   color: $brown;
+//   background-color: $cream;
+//   border-color: $cream;
 
-  &:hover {
-    color: $cream;
-    background-color: rgba(37, 11, 6, 0.3);
-    border-color: $cream;
-  }
-}
+//   &:hover {
+//     color: $cream;
+//     background-color: rgba(37, 11, 6, 0.3);
+//     border-color: $cream;
+//   }
+// }
 
 .btn-fp {
   color: $cream;
   background-color: $brown;
   border-color: $brown;
   padding: 0.375rem 4.5rem;
+  width: 80%;
+  margin-left: 10%;
 
   &:hover {
     color: $brown;
