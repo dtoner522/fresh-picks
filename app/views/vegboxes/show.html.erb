@@ -4,41 +4,31 @@
       <img src="https://res.cloudinary.com/dtoner522/image/upload/v1620220338/IMG_20200319_140357574-re-e1584663160830_pkop0u.jpg" alt="" class="w-100">
     </div>
     <div class="col-md-6">
-      <h1><%= @vegbox.name %> -£240</h1>
+      <h1>Up-front payment - 20 Weeks - £240</h1>
 
-              <%# need to fix params here - regex etc %>
-<% if !Order.full? %>
-  <%= simple_form_for @order do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :phone_number %>
-  <%= f.input :address_line_1 %>
-  <%= f.input :address_line_2 %>
-  <%= f.input :postcode %>
-  <%= f.hidden_field :amount, value: @vegbox.price %>
-  <%= f.hidden_field :name, value: @vegbox.name %>
-  <%= f.hidden_field :state, value: "pending" %>
+      <% if !Order.full? %>
+        <%= simple_form_for @order do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :email %>
+        <%= f.input :phone_number %>
+        <%= f.input :address_line_1 %>
+        <%= f.input :address_line_2 %>
+        <%= f.input :postcode %>
+        <%= f.hidden_field :amount, value: @vegbox.price %>
+        <%= f.hidden_field :name, value: @vegbox.name %>
+        <%= f.hidden_field :state, value: "pending" %>
 
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-  <% end %>
+        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+        <% end %>
 
-<% else %>
-<p>Unfortunately, we've reached capacity for this season :(</p>
-<p>But please input your details below and you'll be the first in line next season!</p>
-<%= simple_form_for @waitlist do |f| %>
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= submit_tag 'Send', class: 'btn btn-primary' %>
-  <% end %>
+      <% else %>
 
+        <%= render 'waitlist/new' %>
 
-
-<% end %>
+      <% end %>
 
     </div>
-
-
 
   </div>
 </div>
