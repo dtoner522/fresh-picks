@@ -2,7 +2,7 @@
   <h1>Orders</h1>
     <% @orders.each do |order| %>
       <div class="order-card">
-        <p id="title">#<%= order.id %> / <%= order.name%> / €<%= order.amount_cents / 100%></p>
+        <p id="title">#<%= order.id %> / <%= order.name%> / £<%= order.amount_cents / 100%></p>
 
         <p><strong>Customer: <%= order.first_name.titleize %> <%= order.last_name.titleize %></strong></p>
         <p><strong>Status:</strong> <%= order.state %> | <strong>Purchased at:</strong> <%= order.created_at.strftime("%d %B %Y, %H:%M") %></p>

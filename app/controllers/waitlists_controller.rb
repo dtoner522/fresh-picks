@@ -1,11 +1,18 @@
 class WaitlistsController < ApplicationController
 
-  def create
-    Waitlist.create!(waitlist_params)
-    redirect_to confirmation_path
+  def new
+    @waitlist = Waitlist.new
   end
 
+  def create
+    @waitlist = Waitlist.new(waitlist_params)
 
+    if @waitlist.save
+      redirect_to confirmation_path
+    else
+      render template: 'vegboxes/show'
+    end
+  end
 
   def waitlist_params
     params.require(:waitlist).permit( :name, :email)

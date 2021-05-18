@@ -1,0 +1,9 @@
+<p>Unfortunately, we've reached capacity for this season :(</p>
+<p>But please input your details below and you'll be the first in line next season!</p>
+<%= simple_form_for @waitlist do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email,
+              :error_html => { id: "wrong-email" } %>
+  <%= f.error :email, id: "wrong-email" %>
+  <%= submit_tag 'Send', class: 'btn btn-primary' %>
+  <% end %>

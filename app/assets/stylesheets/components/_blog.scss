@@ -26,4 +26,9 @@
 .instagram {
   padding: 20px;
   background-color: $cream;
+
+  a {
+    color: $cream;
+    cursor: default;
+  }
 }
