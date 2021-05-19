@@ -3,14 +3,11 @@ class VegboxesController < ApplicationController
 
   def index
     @vegboxes = Vegbox.all
-    @extravegs = Extraveg.all
   end
 
   def show
     @vegbox = Vegbox.find(params[:id])
-    @order = Order.new
-    @user = current_or_guest_user
-    @orders = Order.all
     @waitlist = Waitlist.new
   end
+
 end

@@ -9,14 +9,12 @@ Rails.application.routes.draw do
 
   resources :vegboxes, only: [:index, :show]
 
+  resources :extravegs, only: [:index, :show]
+
   resources :waitlists, only: [:create]
 
   get 'confirmation', to: 'pages#confirmation'
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
-
-  resources :orders, only: [:show, :create]  do
-    resources :payments, only: :new
-  end
 
 end
