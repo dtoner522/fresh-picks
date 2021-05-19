@@ -10,5 +10,8 @@ class PagesController < ApplicationController
     @waitlists = Waitlist.all
   end
 
+  def extraveg
+  end
+
   def kitchensink; end
 end
