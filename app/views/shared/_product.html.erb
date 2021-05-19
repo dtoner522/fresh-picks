@@ -1,15 +1,41 @@
-<div class="product" id="product">
-  <%= image_tag "product.jpg"%>
+<div class="product">
+  <div class="product-img">
+    <%= image_tag "product.jpg"%>
+  </div>
   <div class="product-content">
     <h2>What's in the box?</h2>
-    <p>You can opt for a weekly or bi Weekly box that will be full of a wide range of veg, herbs, and leaves. Each week will have a variation depending on what’s in season. Staples such as onion, Carrot and tomatoes will make a regular appearance.</P>
-    <p>Each box includes:
+    <p>You can opt for a weekly or bi Weekly box that will be full of a wide range of veg, herbs, and leaves. Each week will have a variation depending on what’s in season. Staples such as onion, carrot and tomatoes will make a regular appearance.</p>
+    Each box includes:
       <ul>
         <li>8-12 assorted items of vegetables, herbs and salad leaves</li>
         <li>Enough items to produce at least three hearty all veg meals or the equivalent veg accompanyment to other meals</li>
         <li>Please note; potatoes and cooking onions will appear in some boxes but will not be staples.</li>
       </ul>
-    </p>
     <%= link_to "Order now", "vegboxes", class: "btn btn-fp" %>
+  </div>
+</div>
+
+<div class="product" id="product">
+  <div class="product-content">
+    <h2>Extra Veggies</h2>
+    <p>Every week you can find our excess veggies here for one off-purchases! This week's veggies:</P>
+    <% @extravegs.each do |extra| %>
+      <div class="col-4 justify-content-center">
+        <img src="https://res.cloudinary.com/dtoner522/image/upload/v1620220338/IMG_20200319_140357574-re-e1584663160830_pkop0u.jpg" alt="" class="w-100 pt-3">
+        <%# # link_to "Buy now!", extraveg_path(extra), class: "btn btn-primary d-block w-100" %>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <%# <%= image_tag teddy.photo_url , class: "card-img-top" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= extra.name %></h5>
+              <p class="card-text"><%= extra.description %></p>
+              <p><%# humanized_money_with_symbol(extra.price) %></p>
+              <h5><%= extra.price %></h5>
+              <%= link_to "Buy now", "extravegs", class: "btn btn-fp" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>

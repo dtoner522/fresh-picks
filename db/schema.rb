@@ -10,41 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_153532) do
+ActiveRecord::Schema.define(version: 2021_05_18_145447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "customers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.integer "phone_number"
-    t.string "address_line_1"
-    t.string "address_line_2"
-    t.string "postcode"
-    t.bigint "order_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id"], name: "index_customers_on_order_id"
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.string "state"
+  create_table "extravegs", force: :cascade do |t|
     t.string "name"
-    t.integer "amount_cents", default: 0, null: false
-    t.string "checkout_session_id"
-    t.bigint "user_id", null: false
+    t.text "description"
+    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.integer "phone_number"
-    t.string "address_line_1"
-    t.string "address_line_2"
-    t.string "postcode"
-    t.index ["user_id"], name: "index_orders_on_user_id"
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,6 +44,11 @@ ActiveRecord::Schema.define(version: 2021_04_30_153532) do
     t.integer "price_cents", default: 0, null: false
   end
 
-  add_foreign_key "customers", "orders"
-  add_foreign_key "orders", "users"
+  create_table "waitlists", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 end

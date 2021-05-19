@@ -1,0 +1,22 @@
+.order-card {
+  background-color: $cream;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  color: $brown;
+  width: 50%;
+
+  a {
+    color: $brown;
+  }
+
+  p {
+    margin: 4px 0;
+  }
+  
+  #title {
+    border-bottom: 2px solid $brown;
+    padding: 4px 0 12px;
+    font-weight: bolder;
+  }
+}
