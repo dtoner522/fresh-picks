@@ -1,18 +1,19 @@
 <div class="container">
-  <h1 class="">Vegbox</h1>
-    <div class="row">
+  <h1>Our garden floweth over, order some extra veggies for even more goodness!</h1>
+    
+    <h2>Order some extra veggies!</h2>
+  <h3>This week's extra veggies are: <%=  %></h3>
+
       <% @extravegs.each do |extra| %>
-        <div class="col-3 justify-content-center">
-            <div class="card">
+    
             <img src="https://res.cloudinary.com/dtoner522/image/upload/v1620220338/IMG_20200319_140357574-re-e1584663160830_pkop0u.jpg" alt="" class="w-100 pt-3">
+            <%# <%= cl_image_tag @extraveg.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="card-body">
-            <h5 class="card-title">Weekly Vegbox</h5>
+            <h5 class="card-title">extra veggies</h5>
             <p class="card-text"><%= extra.name %></p>
             <p><%= humanized_money_with_symbol(extra.price) %></p>
             <h5><%= extra.description %></h5>
             <%= link_to "Buy now!", extravegs_path(extra), class: "btn btn-primary d-block w-100" %>
-            </div>
-        </div>
       <% end %>
-  </div>
+  
 </div>

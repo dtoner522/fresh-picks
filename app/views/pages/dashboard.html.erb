@@ -1,18 +1,37 @@
 <div class="container">
-  <h1>Orders</h1>
-    <% @orders.each do |order| %>
-      <div class="order-card">
-        <p id="title">#<%= order.id %> / <%= order.name%> / £<%= order.amount_cents / 100%></p>
-
-        <p><strong>Customer: <%= order.first_name.titleize %> <%= order.last_name.titleize %></strong></p>
-        <p><strong>Status:</strong> <%= order.state %> | <strong>Purchased at:</strong> <%= order.created_at.strftime("%d %B %Y, %H:%M") %></p>
-        <p><strong>Email:</strong> <a href="mailto:<%= order.email %>"><%= order.email %></a> | <strong>Phone:</strong> <%= order.phone_number %></p>
-        <p><strong>Adress:</strong> <%= order.address_line_1 %>. <%= order.address_line_2 %>, <%= order.postcode %></p>
-      </div>
-
-    <% end %>
+ 
   <h2 class="mt-4">Waiting list</h2>
     <% @waitlists.each do |waitlist| %>
       <p># <%= waitlist.id %> | <strong>Name:</strong> <%= waitlist.name.titleize %> | <strong>Email:</strong> <a href="mailto:<%= waitlist.email %>"><%= waitlist.email %></a></p>
     <% end %>
+
+  <%# <%= render 'shared/evform' %>
+
+  <h2>Update your extra veg boxes!</h2>
+
+  <div class="cards-ev">
+    <% @extravegs.each do |extraveg| %>
+    
+    <%# <div class="<%extraveg.category%>
+      <% extraveg.id %>
+      <% extraveg.category %>
+        <% if extraveg.category == 'large'%>
+          <div class="large">
+          <h3>Large veg box</h3>
+          <p>Price is £7.00</p>
+        <% elsif extraveg.category == 'medium' %> 
+          <div class="medium">
+          <h3>Medium veg box</h3>
+          <p>Price is £5.00</p>
+        <% else %>
+          <div class="small">
+          <h3>Small veg box</h3>
+          <p>Price is £3.00</p>
+        <% end %>
+        <h4><%= extraveg.name %></h4>
+        <p><%= extraveg.description %></p>
+        <%= link_to "Change this box", edit_extraveg_path(extraveg) %>
+    <% end %>
+    </div>
+  </div>
 </div>
