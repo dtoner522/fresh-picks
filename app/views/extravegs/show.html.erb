@@ -6,22 +6,6 @@
     <div class="col-md-6">
       <h1><%= @extraveg.name %> <%= @extraveg.price %></h1>
 
-      <%= simple_form_for @order do |f| %>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :email %>
-      <%= f.input :phone_number %>
-      <%= f.input :address_line_1 %>
-      <%= f.input :address_line_2 %>
-      <%= f.input :postcode %>
-      <%= f.hidden_field :amount, value: @extraveg.price %>
-      <%= f.hidden_field :name, value: @extraveg.name %>
-      <%= f.hidden_field :state, value: "pending" %>
-
-      <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-      <% end %>
-
-
     </div>
 
 

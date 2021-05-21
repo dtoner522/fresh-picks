@@ -3,4 +3,40 @@
     <% @waitlists.each do |waitlist| %>
       <p># <%= waitlist.id %> | <strong>Name:</strong> <%= waitlist.name.titleize %> | <strong>Email:</strong> <a href="mailto:<%= waitlist.email %>"><%= waitlist.email %></a></p>
     <% end %>
+
+  <%# <%= render 'shared/evform' %>
+
+  <h2>Update your extra veg boxes!</h2>
+
+  <div class="cards-benefit">
+    <% @extravegs.each do |extraveg| %>
+      <% extraveg.id %>
+      <% extraveg.category %>
+        <% if extraveg.category == 'large'%>
+          <div class="card-benefit">
+            <h3>Large veg box</h3>
+            <p>Price is £7.00</p>
+            <h4><%= extraveg.name %></h4>
+            <p><%= extraveg.description %></p>
+            <%= link_to "Change this box", edit_extraveg_path(extraveg) %>
+          </div>
+        <% elsif extraveg.category == 'medium' %> 
+          <div class="card-benefit">
+            <h3>Medium veg box</h3>
+            <p>Price is £5.00</p>
+          <h4><%= extraveg.name %></h4>
+          <p><%= extraveg.description %></p>
+          <%= link_to "Change this box", edit_extraveg_path(extraveg) %>
+          </div>
+        <% else %>
+          <div class="card-benefit">
+            <h3>Small veg box</h3>
+            <p>Price is £3.00</p>
+            <h4><%= extraveg.name %></h4>
+            <p><%= extraveg.description %></p>
+            <%= link_to "Change this box", edit_extraveg_path(extraveg) %>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
 </div>

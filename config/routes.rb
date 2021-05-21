@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :vegboxes, only: [:index, :show]
 
-  resources :extravegs, only: [:index, :show]
+  resources :extravegs
 
   resources :waitlists, only: [:create]
 
