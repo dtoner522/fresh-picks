@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_155724) do
-
+ActiveRecord::Schema.define(version: 2021_05_21_111311) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "phone"
+    t.string "type"
+  end
 
   create_table "extravegs", force: :cascade do |t|
     t.string "name"
@@ -44,13 +52,6 @@ ActiveRecord::Schema.define(version: 2021_05_19_155724) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "price_cents", default: 0, null: false
     t.boolean "status", default: true
-  end
-
-  create_table "waitlists", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
