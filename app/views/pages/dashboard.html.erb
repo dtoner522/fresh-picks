@@ -1,10 +1,21 @@
 <div class="container">
-  <h2 class="mt-4">Waiting list</h2>
-    <% unless @customers.empty? %>
-      <% @customers.each do |customer| %>
-        <p># <%= customer.id %> | <strong>Name:</strong> <%= customer.name.titleize %> | <strong>Email:</strong> <a href="mailto:<%= customer.email %>"><%= customer.email %></a></p>
-      <% end %>
+
+  <h2 class="mt-4">Purchases</h2>
+
+  <% unless @purchases.empty? %>
+    <% @purchases.each do |purchase| %>
+      <p># <%= purchase.id %> | <strong>Name:</strong> <%= purchase.name.titleize %> | <strong>Email:</strong> <a href="mailto:<%= purchase.email %>"><%= purchase.email.downcase %></a> | <strong>Phone:</strong> <%= purchase.phone %> </p>
     <% end %>
+  <% end %>
+
+
+  <h2 class="my-4">Waitlist</h2>
+
+  <% unless @waitlists.empty? %>
+    <% @waitlists.each do |waitlist| %>
+      <p># <%= waitlist.id %> | <strong>Name:</strong> <%= waitlist.name.titleize %> | <strong>Email:</strong> <a href="mailto:<%= waitlist.email %>"><%= waitlist.email.downcase %></a> | <strong>Phone:</strong> <%= waitlist.phone %> </p>
+    <% end %>
+  <% end %>
 
   <h2>Update your extra veg boxes!</h2>
 
