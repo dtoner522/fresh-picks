@@ -1,0 +1,19 @@
+.extraveg {
+  background-color: $cream;
+  color: $brown;
+  margin-top: 80px;
+  padding-bottom: 20px;
+}
+
+.cards-extraveg {
+  display: flex;
+  justify-content: space-between;
+}
+
+.extraveg-content{
+  padding: 20px;
+
+  p {
+    padding-top: 20px;
+  }
+}
