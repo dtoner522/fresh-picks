@@ -32,7 +32,6 @@ class ExtravegsController < ApplicationController
   # PATCH/PUT /extravegs/1
   def update
     @extraveg = Extraveg.find(params[:id])
-    
 
     if @extraveg.update(extraveg_params)
       redirect_to @extraveg, notice: 'Extraveg was successfully updated.'
@@ -55,7 +54,7 @@ class ExtravegsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def extraveg_params
-      params.require(:extraveg).permit(:name, :description, :category)
+      params.require(:extraveg).permit(:name, :description, :category, :quantity)
     end
 
 end
