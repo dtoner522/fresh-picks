@@ -1,11 +1,15 @@
 <p>Unfortunately, we've reached capacity for this season :(</p>
 <p>But please input your details below and you'll be the first in line next season!</p>
 <%= simple_form_for @customer do |f| %>
+  <% customer_type = box.status ? "purchase" : "waitlist" %>
+
   <%= f.input :name %>
   <%= f.input :email,
               :error_html => { id: "wrong-email" } %>
   <%= f.input :phone %>
-  <%= f.hidden_field :customer_type, :value => "waitlist"  %>
+  <!-- <%= f.hidden_field :customer_type, :value => "waitlist"  %> -->
+
+  <%= f.hidden_field :customer_type, :value => customer_type  %>
   <%= f.error :email, id: "wrong-email" %>
   <%= submit_tag 'Send', class: 'btn btn-primary' %>
-  <% end %>
+<% end %>
