@@ -8,7 +8,6 @@
 puts 'Cleaning database...'
 Extraveg.destroy_all
 Vegbox.destroy_all
-Order.destroy_all
 User.destroy_all
 
 puts 'Creating Vegboxes...'
@@ -18,6 +17,8 @@ puts 'Creating Users...'
 User.create!(email:'admin@example.com', password: 'password')
 
 puts 'Creating Extraveg...'
-Extraveg.create!(name:'Carrots', description:'A shit-ton of carrots', price: 0, quantity: 1 )
+Extraveg.create!(name:'Carrots', description:'A shit-ton of carrots', price: 0, quantity: 1, category:'large' )
+Extraveg.create!(name:'Carrots', description:'Quite a lot of carrots', price: 0, quantity: 1, category:'medium' )
+Extraveg.create!(name:'Carrots', description:'A small of carrots', price: 0, quantity: 1, category:'small' )
 
 puts 'Finished!'

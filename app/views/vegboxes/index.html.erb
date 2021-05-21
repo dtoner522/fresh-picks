@@ -1,8 +1,158 @@
 <div class="container">
-  <h1 class="">Vegbox</h1>
-  <div class="row">
+  <h1>Select your items</h1>
+  <%# MAIN VEG BOX PRODUCT %>
+  <div class="product-card" id="vegbox">
+    <%= image_tag "product.jpg"%>
+    <h2>Weekly vegbox</h2>
+    <p>Details about your vegbox.... Cost £240, what's included etc etc...</p>
+    <p>This info should be in a card</p>
+
+  <!-- Load Stripe.js on your website. -->
+  <script src="https://js.stripe.com/v3"></script>
+
+  <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+  <%# BUTTON FOR MAIN VEG BOX %>
+  <button
+    style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+    id="checkout-button-price_1IjPICDXs3V4V0mMSGAyOBtn"
+    role="link"
+    type="button"
+  >
+    Weekly veg box
+  </button>
+
+  <div id="error-message"></div>
+
+  <script>
+  (function() {
+    var stripe = Stripe('pk_test_51IjPBODXs3V4V0mMJsDZyfaP72eTACV98NxH7hZmBlmhVriyy6q9NJm7ZcidaDiFbEOh5iqD1F3IGFuEtLRin50B00WQOT2Uzd');
+
+    var checkoutButton = document.getElementById('checkout-button-price_1IjPICDXs3V4V0mMSGAyOBtn');
+    checkoutButton.addEventListener('click', function () {
+      /*
+      * When the customer clicks on the button, redirect
+      * them to Checkout.
+      */
+      stripe.redirectToCheckout({
+        lineItems: [{price: 'price_1IjPICDXs3V4V0mMSGAyOBtn', quantity: 1}],
+        mode: 'payment',
+        /*
+        * Do not rely on the redirect to the successUrl for fulfilling
+        * purchases, customers may not always reach the success_url after
+        * a successful payment.
+        * Instead use one of the strategies described in
+        * https://stripe.com/docs/payments/checkout/fulfill-orders
+        */
+        successUrl: window.location.protocol + '//poppyjennings.com/success',
+        cancelUrl: window.location.protocol + '//poppyjennings.com/canceled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          /*
+          * If `redirectToCheckout` fails due to a browser or network
+          * error, display the localized error message to your customer.
+          */
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+  })();
+  </script>
+
+  </div>
+
+
+<%# EXTRA CARROTS %>
+  <div class="product-card" id="vegbox">
+    <%= image_tag "evcarrot.jpg"%>
+    <h2>Weekly vegbox</h2>
+    <p>Details about your vegbox.... Cost £240, what's included etc etc...</p>
+    <p>This info should be in a card</p>
+
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-price_1IsTgsDXs3V4V0mMCODLlylG"
+  role="link"
+  type="button"
+>
+  Carrot
+</button>
+
+<div id="error-message"></div>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_test_51IjPBODXs3V4V0mMJsDZyfaP72eTACV98NxH7hZmBlmhVriyy6q9NJm7ZcidaDiFbEOh5iqD1F3IGFuEtLRin50B00WQOT2Uzd');
+
+  var checkoutButton = document.getElementById('checkout-button-price_1IsTgsDXs3V4V0mMCODLlylG');
+  checkoutButton.addEventListener('click', function () {
+    /*
+     * When the customer clicks on the button, redirect
+     * them to Checkout.
+     */
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1IsTgsDXs3V4V0mMCODLlylG', quantity: 1}],
+      mode: 'payment',
+      /*
+       * Do not rely on the redirect to the successUrl for fulfilling
+       * purchases, customers may not always reach the success_url after
+       * a successful payment.
+       * Instead use one of the strategies described in
+       * https://stripe.com/docs/payments/checkout/fulfill-orders
+       */
+      successUrl: window.location.protocol + '//poppyjennings.com/success',
+      cancelUrl: window.location.protocol + '//poppyjennings.com/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        /*
+         * If `redirectToCheckout` fails due to a browser or network
+         * error, display the localized error message to your customer.
+         */
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <% @vegboxes.each do |box| %>
-    <div class="col-6 justify-content-center">
+  
       <img src="https://res.cloudinary.com/dtoner522/image/upload/v1620220338/IMG_20200319_140357574-re-e1584663160830_pkop0u.jpg" alt="" class="w-100 pt-3">
       <button class="btn btn-primary d-block w-100 hide" id="checkout-button-price_1IsR6AJ9QwKSvn5S4IuzAONE" role="link" type="button"> Order Now!</button>
     </div>

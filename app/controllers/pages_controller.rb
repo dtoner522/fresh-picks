@@ -8,6 +8,10 @@ class PagesController < ApplicationController
   def dashboard
     @vegboxes = Vegbox.all
     @waitlists = Waitlist.all
+    @extravegs = Extraveg.all
+  end
+
+  def extraveg
   end
 
   def kitchensink; end
