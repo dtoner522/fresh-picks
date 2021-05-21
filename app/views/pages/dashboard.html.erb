@@ -2,9 +2,12 @@
 
   <h2 class="mt-4">Purchases</h2>
 
-  <% unless @purchases.empty? %>
+    <% unless @purchases.empty? %>
     <% @purchases.each do |purchase| %>
-      <p># <%= purchase.id %> | <strong>Name:</strong> <%= purchase.name.titleize %> | <strong>Email:</strong> <a href="mailto:<%= purchase.email %>"><%= purchase.email.downcase %></a> | <strong>Phone:</strong> <%= purchase.phone %> </p>
+      <p># <%= purchase.id %> | 
+      <strong>Name:</strong> <%= purchase.name.titleize %> | 
+      <strong>Email:</strong> <a href="mailto:<%= purchase.email %>"><%= purchase.email.downcase %></a> | 
+      <strong>Phone:</strong> <%= purchase.phone %> </p>
     <% end %>
   <% end %>
 
@@ -13,7 +16,10 @@
 
   <% unless @waitlists.empty? %>
     <% @waitlists.each do |waitlist| %>
-      <p># <%= waitlist.id %> | <strong>Name:</strong> <%= waitlist.name.titleize %> | <strong>Email:</strong> <a href="mailto:<%= waitlist.email %>"><%= waitlist.email.downcase %></a> | <strong>Phone:</strong> <%= waitlist.phone %> </p>
+      <p># <%= waitlist.id %> | 
+      <strong>Name:</strong> <%= waitlist.name.titleize %> | 
+      <strong>Email:</strong> <a href="mailto:<%= waitlist.email %>"><%= waitlist.email.downcase %></a> | 
+      <strong>Phone:</strong> <%= waitlist.phone %> </p>
     <% end %>
   <% end %>
 
