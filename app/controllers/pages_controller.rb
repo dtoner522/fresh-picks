@@ -13,6 +13,6 @@ class PagesController < ApplicationController
 
   def extraveg
   end
-  
+
   def kitchensink; end
 end
