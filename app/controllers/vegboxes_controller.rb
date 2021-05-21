@@ -7,7 +7,7 @@ class VegboxesController < ApplicationController
 
   def show
     @vegbox = Vegbox.find(params[:id])
-    @waitlist = Waitlist.new
+    @customer = Customer.new
   end
 
 end

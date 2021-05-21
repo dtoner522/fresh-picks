@@ -1,7 +1,9 @@
-<div class="container">    
+<div class="container">
   <h2 class="mt-4">Waiting list</h2>
-    <% @waitlists.each do |waitlist| %>
-      <p># <%= waitlist.id %> | <strong>Name:</strong> <%= waitlist.name.titleize %> | <strong>Email:</strong> <a href="mailto:<%= waitlist.email %>"><%= waitlist.email %></a></p>
+    <% unless @customers.empty? %>
+      <% @customers.each do |customer| %>
+        <p># <%= customer.id %> | <strong>Name:</strong> <%= customer.name.titleize %> | <strong>Email:</strong> <a href="mailto:<%= customer.email %>"><%= customer.email %></a></p>
+      <% end %>
     <% end %>
 
   <h2>Update your extra veg boxes!</h2>

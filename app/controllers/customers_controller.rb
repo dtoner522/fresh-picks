@@ -1,20 +1,20 @@
-class WaitlistsController < ApplicationController
+class CustomersController < ApplicationController
 
   def new
-    @waitlist = Waitlist.new
+    @customer = Customer.new
   end
 
   def create
-    @waitlist = Waitlist.new(waitlist_params)
+   @customer = Customer.new(customer_params)
 
-    if @waitlist.save
+    if@customer.save
       redirect_to confirmation_path
     else
       render template: 'vegboxes/show'
     end
   end
 
-  def waitlist_params
+  def customer_params
     params.require(:waitlist).permit( :name, :email)
   end
 end
