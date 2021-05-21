@@ -5,15 +5,23 @@
   padding-bottom: 20px;
 }
 
-.cards-extraveg {
-  display: flex;
-  justify-content: space-between;
-}
-
 .extraveg-content{
   padding: 20px;
 
   p {
     padding-top: 20px;
   }
+}
+
+.cards-extraveg {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-extraveg {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  align-items: center;
+  width: 30%;
 }
