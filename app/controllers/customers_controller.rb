@@ -15,6 +15,6 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:waitlist).permit( :name, :email)
+    params.require(:waitlist).permit( :name, :email, :phone, :type)
   end
 end

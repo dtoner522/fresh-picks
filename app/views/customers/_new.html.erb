@@ -4,6 +4,8 @@
   <%= f.input :name %>
   <%= f.input :email,
               :error_html => { id: "wrong-email" } %>
+  <%= f.input :phone %>
+  <%= f.hidden_field :type, :value => "waitlist"  %>
   <%= f.error :email, id: "wrong-email" %>
   <%= submit_tag 'Send', class: 'btn btn-primary' %>
   <% end %>
