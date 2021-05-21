@@ -1,4 +1,4 @@
-class WaitlistsController < ApplicationController
+class CustomersController < ApplicationController
 
   def new
     @waitlist = Waitlist.new
