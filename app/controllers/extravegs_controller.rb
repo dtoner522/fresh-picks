@@ -1,4 +1,6 @@
 class ExtravegsController < ApplicationController
+  skip_before_action :authenticate_user!
+  
   def index
     @extravegs = Extraveg.all
   end
@@ -32,12 +34,10 @@ class ExtravegsController < ApplicationController
   # PATCH/PUT /extravegs/1
   def update
     @extraveg = Extraveg.find(params[:id])
-
-    if @extraveg.update(extraveg_params)
-      redirect_to @extraveg, notice: 'Extraveg was successfully updated.'
-    else
-      render :edit
-    end
+    @extraveg.update(extraveg_params)
+    @extraveg.save
+    
+    redirect_to dashboard_path, notice: 'Extraveg was successfully updated.'
   end
 
   # DELETE /extravegs/1
