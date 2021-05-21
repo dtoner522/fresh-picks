@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :extravegs
 
-  resources :waitlists, only: [:create]
+  resources :customers, only: [:create]
 
   get 'confirmation', to: 'pages#confirmation'
 
