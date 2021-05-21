@@ -1,19 +1,227 @@
 <div class="container">
-  <h1>Our garden floweth over, order some extra veggies for even more goodness!</h1>
-    
-    <h2>Order some extra veggies!</h2>
-  <h3>This week's extra veggies are: <%=  %></h3>
-
-      <% @extravegs.each do |extra| %>
-    
-            <img src="https://res.cloudinary.com/dtoner522/image/upload/v1620220338/IMG_20200319_140357574-re-e1584663160830_pkop0u.jpg" alt="" class="w-100 pt-3">
-            <%# <%= cl_image_tag @extraveg.photo.key, height: 300, width: 400, crop: :fill %>
-            <div class="card-body">
-            <h5 class="card-title">extra veggies</h5>
-            <p class="card-text"><%= extra.name %></p>
-            <p><%= humanized_money_with_symbol(extra.price) %></p>
-            <h5><%= extra.description %></h5>
-            <%= link_to "Buy now!", extravegs_path(extra), class: "btn btn-primary d-block w-100" %>
+<h1 class="my-5">Our garden floweth over, order some extra veggies for even more goodness!</h1>
+  <div class="cards-extraveg">
+    <% @extravegs.each do |extraveg| %>
+      <% extraveg.id %>
+      <% extraveg.category %>
+        <% if extraveg.category == 'large'%>
+          <div class="card-extraveg">
+            <h4>Large veg box</h4>
+            <p>Price is £7.00</p>
+            <h4><%= extraveg.name %></h4>
+            <p><%= extraveg.description %></p>
+            <p>Each large order is 5kg</p>
+            <p>Number of orders available: <%= extraveg.quantity %></p>
+            <button
+            style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+            id="checkout-button-price_1Ism9jDXs3V4V0mMElPC6CSD"
+            role="link"
+            type="button"
+          >
+            Large box £7
+          </button>
+          </div>
+        <% elsif extraveg.category == 'medium' %> 
+          <div class="card-extraveg">
+            <h4>Medium veg box</h4>
+            <p>Price is £5.00</p>
+            <h4><%= extraveg.name %></h4>
+            <p><%= extraveg.description %></p>
+            <p>Each medium order is 3kg</p>
+            <p>Number of orders available: <%= extraveg.quantity %></p>
+            <button
+            style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+            id="checkout-button-price_1Ism9jDXs3V4V0mM7Jrv0f68"
+            role="link"
+            type="button"
+          >
+            Medium box £5
+            </button>
+          </div>
+        <% else %>
+          <div class="card-extraveg">
+            <h4>Small veg box</h4>
+            <p>Price is £3.00</p>
+            <h4><%= extraveg.name %></h4>
+            <p><%= extraveg.description %></p>
+            <p>Each small order is 1kg</p>
+            <p>Number of orders available: <%= extraveg.quantity %></p>
+            <button
+            style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+            id="checkout-button-price_1IjPJ4DXs3V4V0mMAJAa1zu3"
+            role="link"
+            type="button"
+          >
+            Small box £3
+            </button>
+          </div>
+        <% end %>
       <% end %>
-  
+  </div>
+</div>
+
+
+
+
+
+<div class="large-box-button">
+  <!-- Load Stripe.js on your website. -->
+  <script src="https://js.stripe.com/v3"></script>
+
+  <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+  <%# <button
+    style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+    id="checkout-button-price_1Ism9jDXs3V4V0mMElPC6CSD"
+    role="link"
+    type="button"
+  >
+    Large box £7
+  </button> %>
+
+  <div id="error-message"></div>
+
+  <script>
+  (function() {
+    var stripe = Stripe('pk_test_51IjPBODXs3V4V0mMJsDZyfaP72eTACV98NxH7hZmBlmhVriyy6q9NJm7ZcidaDiFbEOh5iqD1F3IGFuEtLRin50B00WQOT2Uzd');
+
+    var checkoutButton = document.getElementById('checkout-button-price_1Ism9jDXs3V4V0mMElPC6CSD');
+    checkoutButton.addEventListener('click', function () {
+      /*
+      * When the customer clicks on the button, redirect
+      * them to Checkout.
+      */
+      stripe.redirectToCheckout({
+        lineItems: [{price: 'price_1Ism9jDXs3V4V0mMElPC6CSD', quantity: 1}],
+        mode: 'payment',
+        /*
+        * Do not rely on the redirect to the successUrl for fulfilling
+        * purchases, customers may not always reach the success_url after
+        * a successful payment.
+        * Instead use one of the strategies described in
+        * https://stripe.com/docs/payments/checkout/fulfill-orders
+        */
+        successUrl: window.location.protocol + '//poppyjennings.com/success',
+        cancelUrl: window.location.protocol + '//poppyjennings.com/canceled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          /*
+          * If `redirectToCheckout` fails due to a browser or network
+          * error, display the localized error message to your customer.
+          */
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+  })();
+  </script>
+</div>
+
+<div class="medimum-box-button">
+  <!-- Load Stripe.js on your website. -->
+  <script src="https://js.stripe.com/v3"></script>
+
+  <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+  <%# <button
+    style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+    id="checkout-button-price_1Ism9jDXs3V4V0mM7Jrv0f68"
+    role="link"
+    type="button"
+  >
+    Medium box
+  </button> %>
+
+  <div id="error-message"></div>
+
+  <script>
+  (function() {
+    var stripe = Stripe('pk_test_51IjPBODXs3V4V0mMJsDZyfaP72eTACV98NxH7hZmBlmhVriyy6q9NJm7ZcidaDiFbEOh5iqD1F3IGFuEtLRin50B00WQOT2Uzd');
+
+    var checkoutButton = document.getElementById('checkout-button-price_1Ism9jDXs3V4V0mM7Jrv0f68');
+    checkoutButton.addEventListener('click', function () {
+      /*
+      * When the customer clicks on the button, redirect
+      * them to Checkout.
+      */
+      stripe.redirectToCheckout({
+        lineItems: [{price: 'price_1Ism9jDXs3V4V0mM7Jrv0f68', quantity: 1}],
+        mode: 'payment',
+        /*
+        * Do not rely on the redirect to the successUrl for fulfilling
+        * purchases, customers may not always reach the success_url after
+        * a successful payment.
+        * Instead use one of the strategies described in
+        * https://stripe.com/docs/payments/checkout/fulfill-orders
+        */
+        successUrl: window.location.protocol + '//poppyjennings.com/success',
+        cancelUrl: window.location.protocol + '//poppyjennings.com/canceled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          /*
+          * If `redirectToCheckout` fails due to a browser or network
+          * error, display the localized error message to your customer.
+          */
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+  })();
+  </script>
+</div>
+
+<div class="small-box-button">
+  <!-- Load Stripe.js on your website. -->
+  <script src="https://js.stripe.com/v3"></script>
+
+  <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+  <%# <button
+    style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+    id="checkout-button-price_1IjPJ4DXs3V4V0mMAJAa1zu3"
+    role="link"
+    type="button"
+  >
+    Small £3
+  </button> %>
+
+  <div id="error-message"></div>
+
+  <script>
+  (function() {
+    var stripe = Stripe('pk_test_51IjPBODXs3V4V0mMJsDZyfaP72eTACV98NxH7hZmBlmhVriyy6q9NJm7ZcidaDiFbEOh5iqD1F3IGFuEtLRin50B00WQOT2Uzd');
+
+    var checkoutButton = document.getElementById('checkout-button-price_1IjPJ4DXs3V4V0mMAJAa1zu3');
+    checkoutButton.addEventListener('click', function () {
+      /*
+      * When the customer clicks on the button, redirect
+      * them to Checkout.
+      */
+      stripe.redirectToCheckout({
+        lineItems: [{price: 'price_1IjPJ4DXs3V4V0mMAJAa1zu3', quantity: 1}],
+        mode: 'payment',
+        /*
+        * Do not rely on the redirect to the successUrl for fulfilling
+        * purchases, customers may not always reach the success_url after
+        * a successful payment.
+        * Instead use one of the strategies described in
+        * https://stripe.com/docs/payments/checkout/fulfill-orders
+        */
+        successUrl: window.location.protocol + '//poppyjennings.com/success',
+        cancelUrl: window.location.protocol + '//poppyjennings.com/canceled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          /*
+          * If `redirectToCheckout` fails due to a browser or network
+          * error, display the localized error message to your customer.
+          */
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+  })();
+  </script>
 </div>
