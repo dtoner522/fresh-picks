@@ -1,6 +1,10 @@
-<h2>Extra veggies form</h2>
-  <%= simple_form_for @extraveg do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.submit "Submit", class: "btn-primary btn" %>
-<% end %>
+<div class="container">
+  <h2 class="my-3">Extra veggies form</h2>
+    <%= simple_form_for @extraveg do |f| %> 
+    <h2>You are updating the <strong><em><%= @extraveg.category %></em></strong> extra veggie box</h2>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+    <%= f.submit "Submit", class: "btn-primary btn" %>
+  <% end %>
+</div>
