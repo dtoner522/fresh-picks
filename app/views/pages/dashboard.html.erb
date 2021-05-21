@@ -1,13 +1,8 @@
 <div class="container">
-  <h1>Orders</h1>
-    <% @orders.each do |order| %>
+  <h1>Products</h1>
+    <% @vegboxes.each do |box| %>
       <div class="order-card">
-        <p id="title">#<%= order.id %> / <%= order.name%> / £<%= order.amount_cents / 100%></p>
-
-        <p><strong>Customer: <%= order.first_name.titleize %> <%= order.last_name.titleize %></strong></p>
-        <p><strong>Status:</strong> <%= order.state %> | <strong>Purchased at:</strong> <%= order.created_at.strftime("%d %B %Y, %H:%M") %></p>
-        <p><strong>Email:</strong> <a href="mailto:<%= order.email %>"><%= order.email %></a> | <strong>Phone:</strong> <%= order.phone_number %></p>
-        <p><strong>Adress:</strong> <%= order.address_line_1 %>. <%= order.address_line_2 %>, <%= order.postcode %></p>
+        <p id="title">#<%= box.name %> / <%= box.status%></p>
       </div>
 
     <% end %>

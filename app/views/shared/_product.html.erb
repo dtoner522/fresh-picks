@@ -4,40 +4,19 @@
   </div>
   <div class="product-content">
     <h2>What's in the box?</h2>
-    <p>Your box will be delivered packed full of a range of veggies, herbs and salad leaves. The box will change each week to depending on what's in season at the time. Staples such as onions, carrot and tomatoes will make regular appearances along with other more fancy and exotic options. All while keeping everything local and sustainable. 
+    <p>Your box will be delivered packed full of a range of veggies, herbs and salad leaves. The box will change each week depending on what's in season at the time. Staples such as onions, carrot and tomatoes will make regular appearances along with other more fancy and exotic options. All while keeping everything local and sustainable. 
     </p>
-    <p>Every item is picked on the same day that you will recieve your box to ensure you receive the freshest, most flaverfull and nutrient rich produce. No rock-hard tomatoes, no sad looking leaves staring at you through a plastic bag. Infact no plastic bags at all!
+    <p>Every item is picked on the same day that you will recieve your box to ensure you receive the freshest, most flavourful and nutrient-rich produce. No rock-hard tomatoes, no sad-looking leaves staring at you through a plastic bag. In fact, no plastic bags at all!
     </p>
     <%= link_to "Order now", "vegboxes", class: "btn btn-fp" %>
   </div>
 </div>
 
-<<<<<<< HEAD
-<div class="product" id="product">
-=======
 <div class="product">
-  <%= image_tag "product.jpg"%>
->>>>>>> 5acbac0e6abf78c898fe5eca77bf21e297041cb2
+
   <div class="product-content">
     <h2>Extra Veggies</h2>
     <p>Every week you can find our excess veggies here for one off-purchases! This week's veggies:</P>
-    <% @extravegs.each do |extra| %>
-      <div class="col-4 justify-content-center">
-        <img src="https://res.cloudinary.com/dtoner522/image/upload/v1620220338/IMG_20200319_140357574-re-e1584663160830_pkop0u.jpg" alt="" class="w-100 pt-3">
-        <%# # link_to "Buy now!", extraveg_path(extra), class: "btn btn-primary d-block w-100" %>
-        </div>
-        <div class="col-4">
-          <div class="card">
-            <%# <%= image_tag teddy.photo_url , class: "card-img-top" %>
-            <div class="card-body">
-              <h5 class="card-title"><%= extra.name %></h5>
-              <p class="card-text"><%= extra.description %></p>
-              <p><%# humanized_money_with_symbol(extra.price) %></p>
-              <h5><%= extra.price %></h5>
-              <%= link_to "Buy now", "extravegs", class: "btn btn-fp" %>
-            </div>
-          </div>
-        </div>
-      <% end %>
   </div>
+    <%= image_tag "product.jpg"%>
 </div>
