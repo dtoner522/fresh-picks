@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @orders = Order.all
+    @vegboxes = Vegbox.all
     @waitlists = Waitlist.all
     @extravegs = Extraveg.all
   end

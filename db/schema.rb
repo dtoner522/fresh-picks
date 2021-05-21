@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_155724) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "price_cents", default: 0, null: false
+    t.boolean "status", default: true
   end
 
   create_table "waitlists", force: :cascade do |t|
