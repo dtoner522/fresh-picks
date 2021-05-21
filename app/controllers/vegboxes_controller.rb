@@ -3,11 +3,11 @@ class VegboxesController < ApplicationController
 
   def index
     @vegboxes = Vegbox.all
+    @customer = Customer.new
   end
 
   def show
     @vegbox = Vegbox.find(params[:id])
-    @customer = Customer.new
   end
 
 end
