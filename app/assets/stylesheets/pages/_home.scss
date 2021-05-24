@@ -45,6 +45,14 @@
     }
   }
 
+  .product-content, .about-content {
+    padding: 20px 40px;
+  
+    p {
+      padding: 20px 0px;
+    }
+  }
+
   .btn-fp {
     width: 100%;
     margin: 0%;
@@ -53,6 +61,11 @@
 
 // Mobile
 @media(max-width: 500px){
+  .nav-link {
+    display: block;
+    text-align: center;
+  }
+
   .banner {
     height: 30vh;
   }
@@ -71,9 +84,8 @@
     height: 250px;
   }
 
-  .nav-link {
-    display: block;
-    text-align: center;
+  .product-content p {
+    padding: 20px 0px 20px 0px;
   }
 
   .footer {

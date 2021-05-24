@@ -1,5 +1,13 @@
 .extraveg {
+  background-color: $cream;
+  color: $brown;
+  margin-top: 80px;
   padding: 20px;
+}
+
+.extraveg-content {
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .cards-extraveg {
@@ -10,22 +18,10 @@
 .card-extraveg {
   display: flex;
   flex-direction: column;
-  border: none;
   align-items: center;
   width: 30%;
   padding-bottom: 20px;
+  border: 20px solid $brown;
+  padding: 20px;
+  margin-bottom: 20px;
 }
-
-.extraveg {
-  background-color: $cream;
-  color: $brown;
-  margin-top: 80px;
-  padding-bottom: 20px;
-}
-
-.extraveg-content{
-  p {
-    padding-top: 20px;
-  }
-}
-
