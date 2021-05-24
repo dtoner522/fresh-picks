@@ -1,19 +1,3 @@
-// Specific CSS for your home-page
-.background {
-  /* The image used */
-  // background-image: url("https://cdn.pixabay.com/photo/2016/04/01/12/10/carrot-1300572_960_720.png");
-  background-image: url("../../images/carrot3.png");
-  background-repeat: repeat;
-  background-size: 100px 100px;
-
-  /* Set a specific height */
-  min-height: 100%;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-}
-
 .card-body {
   color:#302316;
   background-color:#fff1ca;
@@ -39,11 +23,11 @@
     height: 570px;
   }
 
-  .cards-benefit {
+  .cards-benefit, .cards-extraveg {
     flex-direction: column;
   }
 
-  .card-benefit {
+  .card-benefit, .card-extraveg {
     width: 100%;
   }
 
@@ -57,7 +41,7 @@
     
     img{
       width: 100%;
-      height: 450px;
+      height: 400px;
     }
   }
 

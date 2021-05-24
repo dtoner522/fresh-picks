@@ -5,98 +5,88 @@
   <div class="cards-extraveg">
     <% @extravegs.each do |extraveg| %>
 
-      <% if extraveg.quantity > 0 %> <%#  if item is available  %> 
+      <% if extraveg.quantity > 0 %> <!-- If item is available --> 
 
         <% extraveg.id %>
         <% extraveg.category %>
 
-          <% if extraveg.category == 'large'%>
+          <% if extraveg.category == 'A'%> <%# <h4>Product A</h4> %>
             <div class="card-extraveg">
-              <h4>Large veg box</h4>
-              <p>Price is £7.00</p>
               <h4><%= extraveg.name %></h4>
-              <p><%= extraveg.description %></p>
-              <p>Each large order is 5kg</p>
-              <p>Number of orders available: <%= extraveg.quantity %></p>
+              <p>Price is £6.00/Kg</p>
+              <p><em>Number of kgs available: <%= extraveg.quantity %></em></p>
+              <h5><%= extraveg.description %></h5>
                   <button
                   style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-                  id="checkout-button-price_1Ism9jDXs3V4V0mMElPC6CSD"
+                  id="checkout-button-price_1IuidxDXs3V4V0mMegvGiVdq"
                   role="link"
                   type="button"
-                  >
-                    Large box £7
-                  </button>
+                >
+                  <%= extraveg.name %> £6.00
+                </button>
             </div>
-          <% elsif extraveg.category == 'medium' %> 
+          <% elsif extraveg.category == 'B' %> <%# <h4>Product B</h4> %>
             <div class="card-extraveg">
-              <h4>Medium veg box</h4>
-              <p>Price is £5.00</p>
               <h4><%= extraveg.name %></h4>
-              <p><%= extraveg.description %></p>
-              <p>Each medium order is 3kg</p>
-              <p>Number of orders available: <%= extraveg.quantity %></p>
+              <p>Price is £4.00/Kg</p>
+              <p><em>Number of kgs available: <%= extraveg.quantity %></em></p>
+              <h5><%= extraveg.description %></h5>
               <button
               style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-              id="checkout-button-price_1Ism9jDXs3V4V0mM7Jrv0f68"
+              id="checkout-button-price_1Iukg1DXs3V4V0mMN1ERinTG"
               role="link"
               type="button"
-            >
-              Medium box £5
+              >
+                <%= extraveg.name %> £4.00
               </button>
             </div>
-          <% else %>
+          <% else %> <%# <h4>Product C</h4> %>
             <div class="card-extraveg">
-              <h4>Small veg box</h4>
-              <p>Price is £3.00</p>
               <h4><%= extraveg.name %></h4>
-              <p><%= extraveg.description %></p>
-              <p>Each small order is 1kg</p>
-              <p>Number of orders available: <%= extraveg.quantity %></p>
-              <button
-              style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-              id="checkout-button-price_1IjPJ4DXs3V4V0mMAJAa1zu3"
-              role="link"
-              type="button"
-            >
-              Small box £3
-              </button>
+              <p>Price is £2.00/Kg</p>
+              <p><em>Number of kgs available: <%= extraveg.quantity %></em></p>
+              <h5><%= extraveg.description %></h5>
+                <button
+                style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+                id="checkout-button-price_1IuklHDXs3V4V0mMvKcx2THD"
+                role="link"
+                type="button"
+                >
+                  <%= extraveg.name %> £2.00
+                </button>
             </div>
           <% end %>
 
-      <% else %>  <%#  if item is not available  %>
+      <% else %>  <!-- If item is unavailable -->
 
         <% extraveg.id %>
         <% extraveg.category %>
 
-          <% if extraveg.category == 'large'%>
+          <% if extraveg.category == 'A'%> <%# <h4>Product A</h4> %>
             <div class="card-extraveg">
-              <h4>Large veg box</h4>
-              <p>Price is £7.00</p>
               <h4><%= extraveg.name %></h4>
-              <p><%= extraveg.description %></p>
-              <p>Each large order is 5kg</p>
-              <p>Number of orders available: <%= extraveg.quantity %></p>
-              <p>Not available right now</p>
+              <p>Price is £6.00/Kg</p>
+              <p><em>Number of kgs available: <%= extraveg.quantity %></em></p>
+              <h5><%= extraveg.description %></h5>
+              <p>Sorry, we have sold out!</p>
             </div>
-          <% elsif extraveg.category == 'medium' %> 
+          <% elsif extraveg.category == 'B' %> <%# <h4>Product B</h4> %>
             <div class="card-extraveg">
-              <h4>Medium veg box</h4>
-              <p>Price is £5.00</p>
               <h4><%= extraveg.name %></h4>
-              <p><%= extraveg.description %></p>
-              <p>Each medium order is 3kg</p>
-              <p>Number of orders available: <%= extraveg.quantity %></p>
-              <p>Not available right now</p>
+              <p><em>Category: <%= extraveg.category %></em></p>
+              <p><em>Price is £4.00/Kg</em></p>
+              <p><em>Number of kgs available: <%= extraveg.quantity %></em></p>
+              <h5><%= extraveg.description %></h5>
+              <p>Sorry, we have sold out!</p>
             </div>
-          <% else %>
+          <% else %> <%# <h4>Product C</h4> %>
             <div class="card-extraveg">
-              <h4>Small veg box</h4>
-              <p>Price is £3.00</p>
               <h4><%= extraveg.name %></h4>
-              <p><%= extraveg.description %></p>
-              <p>Each small order is 1kg</p>
-              <p>Number of orders available: <%= extraveg.quantity %></p>
-              <p>Not available right now</p>
+              <p><em>Category: <%= extraveg.category %></em></p>
+              <p><em>Price is £2.00/Kg</em></p>
+              <p><em>Number of kgs available: <%= extraveg.quantity %></em></p>
+              <h5><%= extraveg.description %></h5>
+              <p>Sorry, we have sold out!</p>
             </div>
           <% end %>
 
@@ -109,18 +99,18 @@
 
 
 
-<div class="large-box-button">
-  <!-- Load Stripe.js on your website. -->
+<div class="large-box-button"> <!-- Product A -->
+    <!-- Load Stripe.js on your website. -->
   <script src="https://js.stripe.com/v3"></script>
 
   <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
   <%# <button
     style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-    id="checkout-button-price_1Ism9jDXs3V4V0mMElPC6CSD"
+    id="checkout-button-price_1IuidxDXs3V4V0mMegvGiVdq"
     role="link"
     type="button"
   >
-    Large box £7
+    Checkout
   </button> %>
 
   <div id="error-message"></div>
@@ -129,14 +119,14 @@
   (function() {
     var stripe = Stripe('pk_test_51IjPBODXs3V4V0mMJsDZyfaP72eTACV98NxH7hZmBlmhVriyy6q9NJm7ZcidaDiFbEOh5iqD1F3IGFuEtLRin50B00WQOT2Uzd');
 
-    var checkoutButton = document.getElementById('checkout-button-price_1Ism9jDXs3V4V0mMElPC6CSD');
+    var checkoutButton = document.getElementById('checkout-button-price_1IuidxDXs3V4V0mMegvGiVdq');
     checkoutButton.addEventListener('click', function () {
       /*
       * When the customer clicks on the button, redirect
       * them to Checkout.
       */
       stripe.redirectToCheckout({
-        lineItems: [{price: 'price_1Ism9jDXs3V4V0mMElPC6CSD', quantity: 1}],
+        lineItems: [{price: 'price_1IuidxDXs3V4V0mMegvGiVdq', quantity: 1}],
         mode: 'payment',
         /*
         * Do not rely on the redirect to the successUrl for fulfilling
@@ -163,18 +153,18 @@
   </script>
 </div>
 
-<div class="medimum-box-button">
-  <!-- Load Stripe.js on your website. -->
+<div class="medimum-box-button"> <!-- Product B -->
+    <!-- Load Stripe.js on your website. -->
   <script src="https://js.stripe.com/v3"></script>
 
   <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
   <%# <button
     style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-    id="checkout-button-price_1Ism9jDXs3V4V0mM7Jrv0f68"
+    id="checkout-button-price_1Iukg1DXs3V4V0mMN1ERinTG"
     role="link"
     type="button"
   >
-    Medium box
+    Checkout
   </button> %>
 
   <div id="error-message"></div>
@@ -183,14 +173,14 @@
   (function() {
     var stripe = Stripe('pk_test_51IjPBODXs3V4V0mMJsDZyfaP72eTACV98NxH7hZmBlmhVriyy6q9NJm7ZcidaDiFbEOh5iqD1F3IGFuEtLRin50B00WQOT2Uzd');
 
-    var checkoutButton = document.getElementById('checkout-button-price_1Ism9jDXs3V4V0mM7Jrv0f68');
+    var checkoutButton = document.getElementById('checkout-button-price_1Iukg1DXs3V4V0mMN1ERinTG');
     checkoutButton.addEventListener('click', function () {
       /*
       * When the customer clicks on the button, redirect
       * them to Checkout.
       */
       stripe.redirectToCheckout({
-        lineItems: [{price: 'price_1Ism9jDXs3V4V0mM7Jrv0f68', quantity: 1}],
+        lineItems: [{price: 'price_1Iukg1DXs3V4V0mMN1ERinTG', quantity: 1}],
         mode: 'payment',
         /*
         * Do not rely on the redirect to the successUrl for fulfilling
@@ -217,18 +207,18 @@
   </script>
 </div>
 
-<div class="small-box-button">
+<div class="small-box-button"> <!-- Product C -->
   <!-- Load Stripe.js on your website. -->
   <script src="https://js.stripe.com/v3"></script>
 
   <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
   <%# <button
     style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-    id="checkout-button-price_1IjPJ4DXs3V4V0mMAJAa1zu3"
+    id="checkout-button-price_1IuklHDXs3V4V0mMvKcx2THD"
     role="link"
     type="button"
   >
-    Small £3
+    Checkout
   </button> %>
 
   <div id="error-message"></div>
@@ -237,14 +227,14 @@
   (function() {
     var stripe = Stripe('pk_test_51IjPBODXs3V4V0mMJsDZyfaP72eTACV98NxH7hZmBlmhVriyy6q9NJm7ZcidaDiFbEOh5iqD1F3IGFuEtLRin50B00WQOT2Uzd');
 
-    var checkoutButton = document.getElementById('checkout-button-price_1IjPJ4DXs3V4V0mMAJAa1zu3');
+    var checkoutButton = document.getElementById('checkout-button-price_1IuklHDXs3V4V0mMvKcx2THD');
     checkoutButton.addEventListener('click', function () {
       /*
       * When the customer clicks on the button, redirect
       * them to Checkout.
       */
       stripe.redirectToCheckout({
-        lineItems: [{price: 'price_1IjPJ4DXs3V4V0mMAJAa1zu3', quantity: 1}],
+        lineItems: [{price: 'price_1IuklHDXs3V4V0mMvKcx2THD', quantity: 1}],
         mode: 'payment',
         /*
         * Do not rely on the redirect to the successUrl for fulfilling
