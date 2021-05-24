@@ -19,5 +19,9 @@ class PagesController < ApplicationController
   def extraveg
   end
 
+  def success
+    @customer = Customer.new
+  end
+
   def kitchensink; end
 end
