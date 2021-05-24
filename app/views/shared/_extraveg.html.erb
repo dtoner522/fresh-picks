@@ -15,6 +15,7 @@
             <p>Price is £6.00/Kg</p>
             <p><%= extraveg.description %></p>
             <p>Kg available: <%= extraveg.quantity %></p>
+            <%= link_to "Order", "extravegs", class: "btn btn-fp btn-fp-sm" %>
           </div>
         <% elsif extraveg.category == 'B' %> 
           <div class="card-extraveg">
@@ -23,6 +24,7 @@
             <p>Price is £4.00/Kg</p>
             <p><%= extraveg.description %></p>
             <p>Kg available: <%= extraveg.quantity %></p>
+            <%= link_to "Order", "extravegs", class: "btn btn-fp btn-fp-sm" %>
           </div>
         <% else %>
           <div class="card-extraveg">
@@ -31,9 +33,9 @@
             <p>Price is £2.00/Kg</p>
             <p><%= extraveg.description %></p>
             <p>Kg available: <%= extraveg.quantity %></p>
+            <%= link_to "Order", "extravegs", class: "btn btn-fp btn-fp-sm" %>
           </div>
         <% end %>
     <% end %>
   </div>
-  <%= link_to "Order now", "extravegs", class: "btn btn-fp" %>
 </div>
