@@ -1,0 +1,7 @@
+<div class="container">
+    <%= simple_form_for @vegbox do |f| %> 
+    <h2>You are updating the <strong><em><%= @vegbox.name %></em></strong> vegbox</h2>
+    <%= f.input :status, label: 'available?' %>
+    <%= f.submit "Submit", class: "btn-primary btn" %>
+  <% end %>
+</div>
