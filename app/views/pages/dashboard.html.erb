@@ -29,32 +29,32 @@
     <% @extravegs.each do |extraveg| %>
       <% extraveg.id %>
       <% extraveg.category %>
-        <% if extraveg.category == 'large'%>
+        <% if extraveg.category == 'A'%>
           <div class="card-extraveg">
-            <h4>Large veg box</h4>
-            <p>Price is £7.00</p>
+            <h4>Product <%= extraveg.category %>
             <h4><%= extraveg.name %></h4>
+            <p>Price is £6.00/Kg</p>
             <p><%= extraveg.description %></p>
-            <p>Quantity available: <%= extraveg.quantity %></p>
-            <%= link_to "Change this box", edit_extraveg_path(extraveg) %>
+            <p>Kg available: <%= extraveg.quantity %></p>
+            <%= link_to "Update this product", edit_extraveg_path(extraveg) %>
           </div>
-        <% elsif extraveg.category == 'medium' %> 
+        <% elsif extraveg.category == 'B' %> 
           <div class="card-extraveg">
-            <h4>Medium veg box</h4>
-            <p>Price is £5.00</p>
-          <h4><%= extraveg.name %></h4>
-          <p><%= extraveg.description %></p>
-          <p>Quantity available: <%= extraveg.quantity %></p>
-          <%= link_to "Change this box", edit_extraveg_path(extraveg) %>
+            <h4>Product <%= extraveg.category %>
+            <h4><%= extraveg.name %></h4>
+            <p>Price is £4.00/Kg</p>
+            <p><%= extraveg.description %></p>
+            <p>Kg available: <%= extraveg.quantity %></p>
+            <%= link_to "Update this product", edit_extraveg_path(extraveg) %>
           </div>
         <% else %>
           <div class="card-extraveg">
-            <h4>Small veg box</h4>
-            <p>Price is £3.00</p>
+            <h4>Product <%= extraveg.category %>
             <h4><%= extraveg.name %></h4>
+            <p>Price is £2.00/Kg</p>
             <p><%= extraveg.description %></p>
-            <p>Quantity available: <%= extraveg.quantity %></p>
-            <%= link_to "Change this box", edit_extraveg_path(extraveg) %>
+            <p>Kg available: <%= extraveg.quantity %></p>
+            <%= link_to "Update this product", edit_extraveg_path(extraveg) %>
           </div>
         <% end %>
     <% end %>

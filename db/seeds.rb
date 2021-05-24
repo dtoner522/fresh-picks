@@ -17,8 +17,8 @@ puts 'Creating Users...'
 User.create!(email:'admin@example.com', password: 'password')
 
 puts 'Creating Extraveg...'
-Extraveg.create!(name:'Carrots', description:'A shit-ton of carrots', price: 0, quantity: 1, category:'large' )
-Extraveg.create!(name:'Carrots', description:'Quite a lot of carrots', price: 0, quantity: 1, category:'medium' )
-Extraveg.create!(name:'Carrots', description:'A small of carrots', price: 0, quantity: 1, category:'small' )
+Extraveg.create!(name:'Rhubarb', description:'This is Product A, the most expensive fruit or veg per kilo', price: 0, quantity: 1, category:'A' )
+Extraveg.create!(name:'Kale', description:'This is Product B, the mid-range price of fruit or veg per kilo', price: 0, quantity: 1, category:'B' )
+Extraveg.create!(name:'Carrots', description:'This is Product C, the cheapest of the lot from the extra fruit and veg', price: 0, quantity: 1, category:'C' )
 
 puts 'Finished!'
