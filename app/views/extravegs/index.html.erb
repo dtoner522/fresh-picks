@@ -1,9 +1,11 @@
 <div class="container">
+
+
 <h1 class="my-5">Our garden floweth over, order some extra veggies for even more goodness!</h1>
   <div class="cards-extraveg">
     <% @extravegs.each do |extraveg| %>
 
-      <% if extraveg.quantity > 0 %> <%#  << doesn't work??  %> 
+      <% if extraveg.quantity > 0 %> <%#  if item is available  %> 
 
         <% extraveg.id %>
         <% extraveg.category %>
@@ -16,14 +18,14 @@
               <p><%= extraveg.description %></p>
               <p>Each large order is 5kg</p>
               <p>Number of orders available: <%= extraveg.quantity %></p>
-              <button
-              style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-              id="checkout-button-price_1Ism9jDXs3V4V0mMElPC6CSD"
-              role="link"
-              type="button"
-            >
-              Large box £7
-            </button>
+                  <button
+                  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+                  id="checkout-button-price_1Ism9jDXs3V4V0mMElPC6CSD"
+                  role="link"
+                  type="button"
+                  >
+                    Large box £7
+                  </button>
             </div>
           <% elsif extraveg.category == 'medium' %> 
             <div class="card-extraveg">
@@ -61,7 +63,44 @@
             </div>
           <% end %>
 
-      <%end %>
+      <% else %>  <%#  if item is not available  %>
+
+        <% extraveg.id %>
+        <% extraveg.category %>
+
+          <% if extraveg.category == 'large'%>
+            <div class="card-extraveg">
+              <h4>Large veg box</h4>
+              <p>Price is £7.00</p>
+              <h4><%= extraveg.name %></h4>
+              <p><%= extraveg.description %></p>
+              <p>Each large order is 5kg</p>
+              <p>Number of orders available: <%= extraveg.quantity %></p>
+              <p>Not available right now</p>
+            </div>
+          <% elsif extraveg.category == 'medium' %> 
+            <div class="card-extraveg">
+              <h4>Medium veg box</h4>
+              <p>Price is £5.00</p>
+              <h4><%= extraveg.name %></h4>
+              <p><%= extraveg.description %></p>
+              <p>Each medium order is 3kg</p>
+              <p>Number of orders available: <%= extraveg.quantity %></p>
+              <p>Not available right now</p>
+            </div>
+          <% else %>
+            <div class="card-extraveg">
+              <h4>Small veg box</h4>
+              <p>Price is £3.00</p>
+              <h4><%= extraveg.name %></h4>
+              <p><%= extraveg.description %></p>
+              <p>Each small order is 1kg</p>
+              <p>Number of orders available: <%= extraveg.quantity %></p>
+              <p>Not available right now</p>
+            </div>
+          <% end %>
+
+      <%end %> <%#  close of extraveg.quantity > 0 if statement  %> 
     <% end %>
   </div>
 </div>
