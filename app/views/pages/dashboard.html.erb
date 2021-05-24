@@ -23,7 +23,7 @@
     <% end %>
   <% end %>
 
-  <h2>Update your extra veg boxes!</h2>
+  <h2 class="my-4">Update your extra veg boxes!</h2>
 
   <div class="cards-extraveg">
     <% @extravegs.each do |extraveg| %>
@@ -56,4 +56,9 @@
         <% end %>
     <% end %>
   </div>
+
+  <h2 class="my-4">Turn off Vegboxes purchases</h2>
+    <% @vegboxes.each do |box| %>
+      <p><%= box.name %></p><%= link_to "Change this box", edit_vegbox_path(box) %>
+    <% end %>
 </div>
