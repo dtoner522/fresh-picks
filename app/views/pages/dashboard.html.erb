@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h2 class="mt-4">Purchases</h2>
+  <h2 class="my-4 mb-2 border-bottom">Purchases</h2>
 
     <% unless @purchases.empty? %>
     <% @purchases.each do |purchase| %>
@@ -12,7 +12,7 @@
   <% end %>
 
 
-  <h2 class="my-4">Waitlist</h2>
+  <h2 class="my-4 border-bottom">Waitlist</h2>
 
   <% unless @waitlists.empty? %>
     <% @waitlists.each do |waitlist| %>
@@ -23,7 +23,7 @@
     <% end %>
   <% end %>
 
-  <h2 class="my-4">Update your extra veg boxes!</h2>
+  <h2 class="my-4 border-bottom">Update your extra veg</h2>
 
   <div class="cards-extraveg">
     <% @extravegs.each do |extraveg| %>
@@ -60,8 +60,8 @@
     <% end %>
   </div>
 
-  <h2 class="my-4">Turn off Vegboxes purchases</h2>
+  <h2 class="my-4 border-bottom">Turn off Vegboxes purchases</h2>
     <% @vegboxes.each do |box| %>
-      <p><%= box.name %></p><%= link_to "Change this box", edit_vegbox_path(box) %>
+      <p><%= box.name %></p><%= link_to "Change this box", edit_vegbox_path(box), class: "pb-4" %>
     <% end %>
 </div>
