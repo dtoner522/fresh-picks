@@ -12,6 +12,8 @@
         <% if box.status %>
           <button class="btn btn-primary d-block w-100 hide" id="checkout-button-price_1IsR6AJ9QwKSvn5S4IuzAONE" role="link" type="button"> Order Now!</button>
         <% else %>
+         <p>Unfortunately, we've reached capacity for this season :(</p>
+         <p>But please input your details below and you'll be the first in line next season!</p>
           <%= render partial: 'customers/new', locals: { box: box } %>
         <% end %>
 
