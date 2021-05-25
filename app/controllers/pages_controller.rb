@@ -21,6 +21,7 @@ class PagesController < ApplicationController
 
   def success
     @customer = Customer.new
+    @vegboxes = Vegbox.all
   end
 
   def kitchensink; end
