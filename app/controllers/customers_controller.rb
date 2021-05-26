@@ -6,12 +6,14 @@ class CustomersController < ApplicationController
   end
 
   def create
-   @customer = Customer.new(customer_params)
+    @customer = Customer.new(customer_params)
+    @vegboxes = Vegbox.all
 
     if@customer.save
       redirect_to confirmation_path
     else
-      render template: 'vegboxes/show'
+      # render template: 'vegboxes/show'
+      render template: 'vegboxes/index', locals: { vegboxes: @vegboxes }
     end
   end
 
