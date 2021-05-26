@@ -6,6 +6,7 @@ class Extraveg < ApplicationRecord
   def self.empty?
     total = Extraveg.all.count
     empty_amount = Extraveg.where(quantity:0).count
+
     return total == empty_amount
   end
 end

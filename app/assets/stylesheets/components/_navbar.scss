@@ -1,6 +1,7 @@
 .navbar-mt {
   justify-content: space-between;
-  background-color: $brown;
+  z-index: 10;
+  
   .navbar-brand, .dropdown-item {
     color: $brown;
     padding: 0px;
