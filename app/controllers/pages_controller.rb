@@ -20,7 +20,7 @@ class PagesController < ApplicationController
   def extraveg
   end
 
-  def success
+  def successful
     @customer = Customer.new
     @vegboxes = Vegbox.all
   end
