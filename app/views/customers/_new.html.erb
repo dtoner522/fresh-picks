@@ -11,8 +11,9 @@
   <%= f.input :name %>
   <%= f.input :email,
               :error_html => { id: "wrong-email" } %>
-  <%= f.input :phone %>
+  <%= f.input :phone,
+              :error_html => { id: "wrong-phone" } %>
   <%= f.hidden_field :customer_type, :value => customer_type  %>
-  <%= f.error :email, id: "wrong-email" %>
+
   <%= submit_tag 'Send', class: 'btn btn-primary' %>
 <% end %>
