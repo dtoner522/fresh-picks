@@ -1,7 +1,9 @@
 <div class="container position-relative">
-  <div class="extraveg d-flex justify-content-center align-items-center">
+  <div class="extraveg justify-content-center align-items-center">
       <h2 class="text-center">Your purchase was successful! Don't forget to add your phone number below so we can get in touch regarding delivery  :)</h2>
-      <%= render 'customers/new' %>
-      <%= image_tag "FreshPicks_Logo_Colour.png", class:"confirmation" %>
+      <div class="d-flex justify-content-around align-items-center py-4">
+        <%= render 'customers/new' %>
+        <%= image_tag "FreshPicks_Logo_Colour.png", class:"confirmation" %>
+      </div>
     </div>
 </div>

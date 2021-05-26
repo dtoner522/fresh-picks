@@ -1,6 +1,11 @@
+.card {
+  border-radius: 8px;
+}
+
 .card-body {
   color:#302316;
   background-color:#fff1ca;
+  border-radius: 8px;
 }
 
 // Tablets and under
@@ -104,7 +109,7 @@
 }
 
 .confirmation {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
 }
 
