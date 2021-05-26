@@ -11,6 +11,16 @@
     <% end %>
   <% end %>
 
+  <h2 class="my-4">Extravegs</h2>
+
+  <% unless @extravs.empty? %>
+    <% @extravs.each do |extrav| %>
+      <p># <%= extrav.id %> | 
+      <strong>Name:</strong> <%= extrav.name.titleize %> | 
+      <strong>Email:</strong> <a href="mailto:<%= extrav.email %>"><%= extrav.email.downcase %></a> | 
+      <strong>Phone:</strong> <%= extrav.phone %> </p>
+    <% end %>
+  <% end %>
 
   <h2 class="my-4">Waitlist</h2>
 

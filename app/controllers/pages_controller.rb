@@ -12,6 +12,7 @@ class PagesController < ApplicationController
 
     @purchases = Customer.where(customer_type: 'purchase')
     @waitlists = Customer.where(customer_type: 'waitlist')
+    @extravs = Customer.where(customer_type: 'extraveg')
 
     @extravegs = Extraveg.all
   end
@@ -22,6 +23,10 @@ class PagesController < ApplicationController
   def success
     @customer = Customer.new
     @vegboxes = Vegbox.all
+  end
+
+  def extravegsuccess
+    @customer = Customer.new
   end
 
   def kitchensink; end
