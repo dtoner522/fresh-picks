@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'failed', to: 'pages#failed'
   get 'extravegsuccess', to: 'pages#extravegsuccess'
   get 'successful', to: 'pages#successful'
+  get 'about', to: 'pages#about'
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 

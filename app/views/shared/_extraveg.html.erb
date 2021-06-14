@@ -1,70 +1,62 @@
 <div class="extraveg">
   <div class="extraveg-content">
-    <h2>One-off purchases</h2>
-    <p>Every week you can find our excess veggies here for one off-purchases!</p>
+    <h2>One-Offs</h2>
+    <p>If you just fancy a one-off Veg Box then look no further!</p>
   
   </div>
 
 
-<div class="extraveg cards-extraveg">
+<div class="extraveg-mini cards-extraveg">
     <% @extravegs.each do |extraveg| %>
 
       <% if extraveg.quantity > 0%>
-
-        <% if extraveg.category == "A" %>
+        
             <div class="card-extraveg">
               <h4><%= extraveg.name %></h4>
-              <p>Price is £6.00/Kg</p>
-              <p><em>Number of kgs available: <%= extraveg.quantity %></em></p>
               <h5><%= extraveg.description %></h5>
-                  <button
-                  class="btn btn-primary"
-                  id="checkout-button-price_1IuidxDXs3V4V0mMegvGiVdq"
-                  role="link"
-                  type="button"
-                >
-
-                  <%= extraveg.name %> £6.00
-                
-                </button>
-            </div>
-
-            
-            <% elsif extraveg.category == "B" %>
-              <div class="card-extraveg">
-                <h4><%= extraveg.name %></h4>
-                <p>Price is £4.00/Kg</p>
-                <p><em>Number of kgs available: <%= extraveg.quantity %></em></p>
-                <h5><%= extraveg.description %></h5>
+              <h5>£<%= extraveg.price %></h5>
+              <% if extraveg.category == "A" %>
                 <button
                 class="btn btn-primary"
-                id="checkout-button-price_1Iukg1DXs3V4V0mMN1ERinTG"
+                id="checkout-button-price_1J0YdvKujJTvt3poyH2YopE6"
                 role="link"
                 type="button"
                 >
-                  <%= extraveg.name %> £4.00
+                 Order now
                 </button>
-              </div>
-
-            <% else %>
-              <div class="card-extraveg">
-                <h4><%= extraveg.name %></h4>
-                <p>Price is £2.00/Kg</p>
-                <p><em>Number of kgs available: <%= extraveg.quantity %></em></p>
-                <h5><%= extraveg.description %></h5>
-                  <button
-                  class="btn btn-primary"
-                  id="checkout-button-price_1IuklHDXs3V4V0mMvKcx2THD"
-                  role="link"
-                  type="button"
-                  >
-                    <%= extraveg.name %> £2.00
-                  </button>
-              </div>
+              <% elsif extraveg.category == "B" %>
+                <button
+                class="btn btn-primary"
+                id="checkout-button-price_1J0Yd1KujJTvt3poqiAwtWak"
+                role="link"
+                type="button"
+                >
+                  Order now
+                </button>
+              <% elsif extraveg.category == "C"%>
+                <button
+                class="btn btn-primary"
+                id="checkout-button-price_1J0YbQKujJTvt3poncTsFJ1O"
+                role="link"
+                type="button"
+                >
+                  Order now
+                </button>
+              <% elsif extraveg.category == "D"%>
+                <button
+                class="btn btn-primary"
+                id="checkout-button-price_1J0YFSKujJTvt3pobnH5naN6"
+                role="link"
+                type="button"
+                >
+                  Order now
+                </button>
               <% end %>
-          <% end %>
+            </div> 
 
       <% end %>
+      
+    <% end %>
   </div>
 
 </div> <%#  close of extraveg class  %>

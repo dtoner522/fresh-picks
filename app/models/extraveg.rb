@@ -1,7 +1,7 @@
 class Extraveg < ApplicationRecord
   monetize :price_cents
   # has_one_attached :photo
-  validates :category, inclusion: { in: ["A", "B", "C"] }
+  validates :category, inclusion: { in: ["A", "B", "C", "D"] }
 
   def self.empty?
     total = Extraveg.all.count

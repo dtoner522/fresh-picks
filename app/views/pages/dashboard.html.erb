@@ -38,35 +38,12 @@
   <div class="cards-extraveg">
     <% @extravegs.each do |extraveg| %>
       <% extraveg.id %>
-      <% extraveg.category %>
-        <% if extraveg.category == 'A'%>
-          <div class="card-extraveg">
-            <h4>Product <%= extraveg.category %>
-            <h4><%= extraveg.name %></h4>
-            <p>Price is £6.00/Kg</p>
-            <p><%= extraveg.description %></p>
-            <p>Kg available: <%= extraveg.quantity %></p>
-            <%= link_to "Update this product", edit_extraveg_path(extraveg) %>
-          </div>
-        <% elsif extraveg.category == 'B' %> 
-          <div class="card-extraveg">
-            <h4>Product <%= extraveg.category %>
-            <h4><%= extraveg.name %></h4>
-            <p>Price is £4.00/Kg</p>
-            <p><%= extraveg.description %></p>
-            <p>Kg available: <%= extraveg.quantity %></p>
-            <%= link_to "Update this product", edit_extraveg_path(extraveg) %>
-          </div>
-        <% else %>
-          <div class="card-extraveg">
-            <h4>Product <%= extraveg.category %>
-            <h4><%= extraveg.name %></h4>
-            <p>Price is £2.00/Kg</p>
-            <p><%= extraveg.description %></p>
-            <p>Kg available: <%= extraveg.quantity %></p>
-            <%= link_to "Update this product", edit_extraveg_path(extraveg) %>
-          </div>
-        <% end %>
+        <div class="card-extraveg">
+          <h4><%= extraveg.name %></h4>
+          <p><%= extraveg.description %></p>
+          <p>No. available: <%= extraveg.quantity %></p>
+          <%= link_to "Update this product", edit_extraveg_path(extraveg) %>
+        </div>
     <% end %>
   </div>
 

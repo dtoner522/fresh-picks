@@ -6,8 +6,156 @@
     <% unless Extraveg.empty? %>
     <%= render 'shared/extraveg' %>
     <% end %>
-    <%= render 'shared/about' %>
     <%= render 'shared/blog' %>
   </div>
 </div>
 <%= render 'shared/footer' %>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_live_51IpzLsKujJTvt3poaj4996zEpJN1LZZgQuZ82qDsXasmEL0qQ2KgbATiC75B6oxXAxbjsW2WDaV3ngaOtdaFbyME00pd7gfRnx');
+
+  var checkoutButton = document.getElementById('checkout-button-price_1J0YdvKujJTvt3poyH2YopE6');
+  checkoutButton.addEventListener('click', function () {
+    /*
+     * When the customer clicks on the button, redirect
+     * them to Checkout.
+     */
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1J0YdvKujJTvt3poyH2YopE6', quantity: 1}],
+      mode: 'payment',
+      /*
+       * Do not rely on the redirect to the successUrl for fulfilling
+       * purchases, customers may not always reach the success_url after
+       * a successful payment.
+       * Instead use one of the strategies described in
+       * https://stripe.com/docs/payments/checkout/fulfill-orders
+       */
+      successUrl: window.location.protocol + '//www.freshpicks.co.uk/success',
+      cancelUrl: window.location.protocol + '//www.freshpicks.co.uk/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        /*
+         * If `redirectToCheckout` fails due to a browser or network
+         * error, display the localized error message to your customer.
+         */
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_live_51IpzLsKujJTvt3poaj4996zEpJN1LZZgQuZ82qDsXasmEL0qQ2KgbATiC75B6oxXAxbjsW2WDaV3ngaOtdaFbyME00pd7gfRnx');
+
+  var checkoutButton = document.getElementById('checkout-button-price_1J0Yd1KujJTvt3poqiAwtWak');
+  checkoutButton.addEventListener('click', function () {
+    /*
+     * When the customer clicks on the button, redirect
+     * them to Checkout.
+     */
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1J0Yd1KujJTvt3poqiAwtWak', quantity: 1}],
+      mode: 'payment',
+      /*
+       * Do not rely on the redirect to the successUrl for fulfilling
+       * purchases, customers may not always reach the success_url after
+       * a successful payment.
+       * Instead use one of the strategies described in
+       * https://stripe.com/docs/payments/checkout/fulfill-orders
+       */
+      successUrl: window.location.protocol + '//www.freshpicks.co.uk/success',
+      cancelUrl: window.location.protocol + '//www.freshpicks.co.uk/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        /*
+         * If `redirectToCheckout` fails due to a browser or network
+         * error, display the localized error message to your customer.
+         */
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_live_51IpzLsKujJTvt3poaj4996zEpJN1LZZgQuZ82qDsXasmEL0qQ2KgbATiC75B6oxXAxbjsW2WDaV3ngaOtdaFbyME00pd7gfRnx');
+
+  var checkoutButton = document.getElementById('checkout-button-price_1J0YFSKujJTvt3pobnH5naN6');
+  checkoutButton.addEventListener('click', function () {
+    /*
+     * When the customer clicks on the button, redirect
+     * them to Checkout.
+     */
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1J0YFSKujJTvt3pobnH5naN6', quantity: 1}],
+      mode: 'payment',
+      /*
+       * Do not rely on the redirect to the successUrl for fulfilling
+       * purchases, customers may not always reach the success_url after
+       * a successful payment.
+       * Instead use one of the strategies described in
+       * https://stripe.com/docs/payments/checkout/fulfill-orders
+       */
+      successUrl: window.location.protocol + '//www.freshpicks.co.uk/success',
+      cancelUrl: window.location.protocol + '//www.freshpicks.co.uk/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        /*
+         * If `redirectToCheckout` fails due to a browser or network
+         * error, display the localized error message to your customer.
+         */
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_live_51IpzLsKujJTvt3poaj4996zEpJN1LZZgQuZ82qDsXasmEL0qQ2KgbATiC75B6oxXAxbjsW2WDaV3ngaOtdaFbyME00pd7gfRnx');
+
+  var checkoutButton = document.getElementById('checkout-button-price_1J0YbQKujJTvt3poncTsFJ1O');
+  checkoutButton.addEventListener('click', function () {
+    /*
+     * When the customer clicks on the button, redirect
+     * them to Checkout.
+     */
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1J0YbQKujJTvt3poncTsFJ1O', quantity: 1}],
+      mode: 'payment',
+      /*
+       * Do not rely on the redirect to the successUrl for fulfilling
+       * purchases, customers may not always reach the success_url after
+       * a successful payment.
+       * Instead use one of the strategies described in
+       * https://stripe.com/docs/payments/checkout/fulfill-orders
+       */
+      successUrl: window.location.protocol + '//www.freshpicks.co.uk/success',
+      cancelUrl: window.location.protocol + '//www.freshpicks.co.uk/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        /*
+         * If `redirectToCheckout` fails due to a browser or network
+         * error, display the localized error message to your customer.
+         */
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
+
