@@ -10,46 +10,45 @@
         
         <!-- !box.status to display waitlist form -->
         <% if box.status %>
-          <h2 class="mb-3">Ways to get your vegbox:</h2>
 
-            <h5>Veg Box + Delivery Weekly Payment</h5>
+            <h5 class="mt-3">Veg Box (delivery) - £15.50 per week</h5>
             <button
               class="btn btn-primary d-block w-100 mb-3 mb-2"
               id="checkout-button-price_1J0YA7KujJTvt3pozUcXgepe"
               role="link"
               type="button"
             >
-              Checkout
+              Order
             </button>
 
-            <h5>Veg Box + Delivery Monthly Payment</h5>
+            <h5>Veg Box (delivery) - £62.00 per month</h5>
             <button
               class="btn btn-primary d-block w-100 mb-3"
               id="checkout-button-price_1J0YA7KujJTvt3polSeyiWIB"
               role="link"
               type="button"
             >
-              Checkout
+              Order
             </button>
 
-            <h5>Veg Box Weekly Payment</h5>
+            <h5>Veg Box (collection) - £13.00 per week</h5>
             <button
               class="btn btn-primary d-block w-100 mb-3"
               id="checkout-button-price_1J04cMKujJTvt3poqeRrQd2q"
               role="link"
               type="button"
             >
-              Checkout
+              Order
             </button>
 
-            <h5>Veg Box Monthly Payment</h5>
+            <h5>Veg Box (collection) - £52.00 per month</h5>
             <button
               class="btn btn-primary d-block w-100 mb-3 hide"
               id="checkout-button-price_1J04cNKujJTvt3poPvnsPLCT"
               role="link"
               type="button"
             >
-              Checkout
+              Order
             </button>
         <% else %>
          <p>Unfortunately, we've reached capacity for this season :(</p>
@@ -106,6 +105,9 @@
        */
       successUrl: 'https://fresh-picks.herokuapp.com/successful',
       cancelUrl: 'https://fresh-picks.herokuapp.com/failed',
+      shippingAddressCollection: {
+        allowedCountries: ['GB'],
+      }
     })
     .then(function (result) {
       if (result.error) {
@@ -144,6 +146,9 @@
        */
       successUrl: 'https://fresh-picks.herokuapp.com/successful',
       cancelUrl: 'https://fresh-picks.herokuapp.com/failed',
+      shippingAddressCollection: {
+        allowedCountries: ['GB'],
+      }
     })
     .then(function (result) {
       if (result.error) {
@@ -182,6 +187,9 @@
        */
       successUrl: 'https://fresh-picks.herokuapp.com/successful',
       cancelUrl: 'https://fresh-picks.herokuapp.com/failed',
+      shippingAddressCollection: {
+        allowedCountries: ['GB'],
+      }
     })
     .then(function (result) {
       if (result.error) {
@@ -220,6 +228,9 @@
        */
       successUrl: 'https://fresh-picks.herokuapp.com/successful',
       cancelUrl: 'https://fresh-picks.herokuapp.com/failed',
+      shippingAddressCollection: {
+        allowedCountries: ['GB'],
+      }
     })
     .then(function (result) {
       if (result.error) {
