@@ -14,7 +14,7 @@ puts 'Creating Vegboxes...'
 Vegbox.create!(name:'Up-front payment - 20 Weeks', price: 240)
 
 puts 'Creating Users...'
-User.create!(email:'admin@example.com', password: 'password')
+User.create!(email:'mclang1@hotmail.com', password: 'CUq076971!')
 
 puts 'Creating Extraveg...'
 Extraveg.create!(name:'Mini Veg Box + Delivery', description:'Description here', price: 0, quantity: 1, category:'A' )
