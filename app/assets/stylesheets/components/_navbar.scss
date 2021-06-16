@@ -23,6 +23,10 @@
   color: $cream;
 }
 
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+  color: $cream !important;
+}
+
 a.nav-link {
   font-size: 24px;
   color: $cream;
