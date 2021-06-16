@@ -1,82 +1,83 @@
 <div class="container">
-  <h1>Weekly vegbox delivery</h1>
+  <div class="row">
+    
 
-  <div class="d-flex">
-    <% @vegboxes.each do |box| %>
-      
-      <div>
-      
-        <img src="https://res.cloudinary.com/dtoner522/image/upload/v1620220338/IMG_20200319_140357574-re-e1584663160830_pkop0u.jpg" alt="" class="w-100 pt-3">
-        
-        <!-- !box.status to display waitlist form -->
-        <% if box.status %>
+      <div class="col-xs-12 col-md-6 mb-3">
+        <h1>Weekly vegbox delivery</h1>
+          <% @vegboxes.each do |box| %>
+            <%= image_tag "box1.jpg", class:"w-100 pt-3" %>
+                        
+              <!-- !box.status to display waitlist form -->
+              <% if box.status %>
 
-            <h5 class="mt-3">Veg Box (delivery) - £15.50 per week</h5>
-            <button
-              class="btn btn-primary d-block w-100 mb-3 mb-2"
-              id="checkout-button-price_1J0YA7KujJTvt3pozUcXgepe"
-              role="link"
-              type="button"
-            >
-              Order
-            </button>
+                  <h5 class="mt-3">Veg Box (delivery) - £15.50 per week</h5>
+                  <button
+                    class="btn btn-primary d-block w-100 mb-3 mb-2"
+                    id="checkout-button-price_1J0YA7KujJTvt3pozUcXgepe"
+                    role="link"
+                    type="button"
+                  >
+                    Order
+                  </button>
 
-            <h5>Veg Box (delivery) - £62.00 per month</h5>
-            <button
-              class="btn btn-primary d-block w-100 mb-3"
-              id="checkout-button-price_1J0YA7KujJTvt3polSeyiWIB"
-              role="link"
-              type="button"
-            >
-              Order
-            </button>
+                  <h5>Veg Box (delivery) - £62.00 per month</h5>
+                  <button
+                    class="btn btn-primary d-block w-100 mb-3"
+                    id="checkout-button-price_1J0YA7KujJTvt3polSeyiWIB"
+                    role="link"
+                    type="button"
+                  >
+                    Order
+                  </button>
 
-            <h5>Veg Box (collection) - £13.00 per week</h5>
-            <button
-              class="btn btn-primary d-block w-100 mb-3"
-              id="checkout-button-price_1J04cMKujJTvt3poqeRrQd2q"
-              role="link"
-              type="button"
-            >
-              Order
-            </button>
+                  <h5>Veg Box (collection) - £13.00 per week</h5>
+                  <button
+                    class="btn btn-primary d-block w-100 mb-3"
+                    id="checkout-button-price_1J04cMKujJTvt3poqeRrQd2q"
+                    role="link"
+                    type="button"
+                  >
+                    Order
+                  </button>
 
-            <h5>Veg Box (collection) - £52.00 per month</h5>
-            <button
-              class="btn btn-primary d-block w-100 mb-3 hide"
-              id="checkout-button-price_1J04cNKujJTvt3poPvnsPLCT"
-              role="link"
-              type="button"
-            >
-              Order
-            </button>
-        <% else %>
-         <p>Unfortunately, we've reached capacity for this season :(</p>
-         <p>But please input your details below and you'll be the first in line next season!</p>
-          <%= render partial: 'customers/new', locals: { box: box } %>
-        <% end %>
+                  <h5>Veg Box (collection) - £52.00 per month</h5>
+                  <button
+                    class="btn btn-primary d-block w-100 mb-3 hide"
+                    id="checkout-button-price_1J04cNKujJTvt3poPvnsPLCT"
+                    role="link"
+                    type="button"
+                  >
+                    Order
+                  </button>
+              <% else %>
+              <p>Unfortunately, we've reached capacity for this season :(</p>
+              <p>But if you leave your details below, we'll let you know about chances to grab a box and you'll be kept in the loop with any special events we host throughout the season.
+                  Also you'll be the first in line next season!</p>
+                <%= render partial: 'customers/new', locals: { box: box } %>
+              <% end %>
 
       </div>
 
-      <div class="col-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title mb-5">Weekly Vegbox - What is in a box?</h5>
-            <p>Each week there will be 8-12 items in the box. The smaller boxes are likely to be towards the start of the season as many plants are still getting established. 
-            <br>
-            <p>Every week there will be salad leaves or a head of lettuce.</p>
-            <br>
-            <p>Regular items will include carrots, scallions or onions, beetroot, courgettes, cucumbers, peas or beans, tomatoes, fresh herbs and cooking greens such as chard, spinach and kale.</p>
-            <br>
-            <p>Other veg will make less regular appearances, these are the veg that grow more slowly or only grow at certain times of the year. These include parsnips, leeks, swedes, cauliflower, sweet corn, broccoli, cabbage and winter squashes.</p>
-            <br>
-            <p>We have also planted some heat loving plants like peppers and aubergines and some more unusual veg like achocha so as long as the sun holds up it’s end of the bargain they should make an appearance too.</p>
+          <div class="col-xs-12 col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title mb-5">Weekly Vegbox - What is in a box?</h5>
+                <p>Each week there will be 8-12 items in the box. The smaller boxes are likely to be towards the start of the season as many plants are still getting established. 
+                <br>
+                <p>Every week there will be salad leaves or a head of lettuce.</p>
+                <br>
+                <p>Regular items will include carrots, scallions or onions, beetroot, courgettes, cucumbers, peas or beans, tomatoes, fresh herbs and cooking greens such as chard, spinach and kale.</p>
+                <br>
+                <p>Other veg will make less regular appearances, these are the veg that grow more slowly or only grow at certain times of the year. These include parsnips, leeks, swedes, cauliflower, sweet corn, broccoli, cabbage and winter squashes.</p>
+                <br>
+                <p>We have also planted some heat loving plants like peppers and aubergines and some more unusual veg like achocha so as long as the sun holds up it’s end of the bargain they should make an appearance too.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      
-    <% end %>
+        <% end %>
+    </div>
   </div>
+</div>
 
   <div id="error-message"></div>
   <%# need to move this somewhere %>

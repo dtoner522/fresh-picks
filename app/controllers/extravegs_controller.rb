@@ -54,7 +54,7 @@ class ExtravegsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def extraveg_params
-      params.require(:extraveg).permit(:name, :description, :category, :quantity)
+      params.require(:extraveg).permit(:name, :description, :category, :quantity, :price)
     end
 
 end
